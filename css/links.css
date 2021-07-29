@@ -1,0 +1,10 @@
+.link-s{
+  color:#ccc;
+  font-weight: 300;
+  text-decoration: none;
+  margin-right: 10px;
+}
+.link-s:hover{
+  color:#0ff;
+  text-decoration: underline;
+}
