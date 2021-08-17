@@ -1,5 +1,8 @@
 {
   "seomc99": {
-    "pass": ["seomc99", "SeoMC99"]
+    "pass": {
+      "1": "seomc99",
+      "2": "SeoMC99"
+    }
   }
 }
