@@ -1,8 +1,9 @@
 const cuentas = require('/data/cuentas.json');
 var pass = prompt("Ingresa la contraseña");
-var correcto = cuentas.seomc99.pass;
+var pass1 = cuentas.seomc99.pass.1;
+var pass2 = cuentas.seomc99.pass.2;
 
-if(pass == correcto[0]||pass == correcto[1]/*pass=="SeoMC99" || pass=="seomc99" || pass=="elver galarga"*/){
+if(pass == pass||pass == pass2){
   location.href="https://www.mediafire.com/file/du063qv9gtiosxo/ChoesinCraft.mcaddon/file";
 }
 else{
