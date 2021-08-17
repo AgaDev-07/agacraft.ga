@@ -1,5 +1,5 @@
 const cuentas = require('/data/cuentas.json');
-var pass = prompt("SeoMC99"/*"Ingresa la contraseña"*/);
+var pass = prompt("Ingresa la contraseña");
 var correcto = cuentas.seomc99.pass;
 
 if(pass == correcto[0]||pass == correcto[1]/*pass=="SeoMC99" || pass=="seomc99" || pass=="elver galarga"*/){
