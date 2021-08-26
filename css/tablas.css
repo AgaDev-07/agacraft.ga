@@ -3,6 +3,7 @@ table,th,td{
   border-collapse: collapse;
 }
 .btn1{
+  font-family: Minecraft;
   background-color: rgb(36, 36, 36);
   border: 2px solid rgb(0, 255, 255);
   color: #fff;
@@ -13,6 +14,7 @@ table,th,td{
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  font-size: 20px;
   transition-duration: 0.5;
 }
 .btn1:hover{
@@ -24,6 +26,7 @@ table,th,td{
 
 
 .btn2{
+  font-family: Minecraft;
   background-color: rgb(26, 26, 26);
   border: 2px solid rgb(0, 255, 255);
   color: #fff;
@@ -34,6 +37,7 @@ table,th,td{
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  font-size: 20px;
   transition-duration: 0.5;
 }
 .btn2:hover{
