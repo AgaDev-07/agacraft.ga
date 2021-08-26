@@ -2,3 +2,42 @@ table,th,td{
   border: 1px solid white;
   border-collapse: collapse;
 }
+.btn1{
+  background-color: rgb(36, 36, 36);
+  border: 2px solid rgb(0, 255, 255);
+  color: #fff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.5;
+}
+.btn1:hover{
+  background-color: rgb(0, 255, 255);
+  border: #fff;
+  color: rgb(36, 36, 36);
+  box-shadow: 0 0 10px rgb(0, 255, 255), 0 0 40px rgb(0, 255, 255), 0 0 80px rgb(0, 255, 255);
+}
+
+
+.btn2{
+  background-color: rgb(26, 26, 26);
+  border: 2px solid rgb(0, 255, 255);
+  color: #fff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.5;
+}
+.btn2:hover{
+  background-color: rgb(0, 255, 255);
+  border: #fff;
+  color: rgb(26, 26, 26);
+}
