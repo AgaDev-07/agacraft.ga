@@ -3,8 +3,8 @@ table,th,td{
   border-collapse: collapse;
 }
 .centro{
-  width:400px;
-  margin:0 auto;
+  width: 170px;
+  margin: 0 auto;
 }
 .btn1{
   font-family: Minecraft;
@@ -23,7 +23,7 @@ table,th,td{
 }
 .btn1:hover{
   background-color: rgb(0, 255, 255);
-  border: #fff;
+  border: 2px solid rgb(0,150, 255);
   color: rgb(36, 36, 36);
   box-shadow: 0 0 10px rgb(0, 255, 255), 0 0 40px rgb(0, 255, 255), 0 0 80px rgb(0, 255, 255);
 }
@@ -45,7 +45,8 @@ table,th,td{
   transition-duration: 0.5;
 }
 .btn2:hover{
-  background-color: rgb(0, 255, 255);
+  background-color: rgb(0, 150, 255);
   border: #fff;
   color: rgb(26, 26, 26);
+  box-shadow: 0 0 10px rgb(0, 255, 255), 0 0 40px rgb(0, 255, 255), 0 0 80px rgb(0, 255, 255);
 }
