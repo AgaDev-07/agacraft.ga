@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/css/links.css" />
     <link rel="stylesheet" href="/css/estilos.css" />
-    <link rel="stylesheet" href="/css/tablas.css" />
+    <script src="/js/esconder.js"></script>
   </head>
   <body>
     <header>
@@ -32,7 +32,9 @@
         <div class="texto-box">
           <h3 class="texto">Chisel es un addon similar al mod de java agregando crafteos y funcionalidades parecidas</h3>
         </div>
-        <div class="texto-box">
+        <input id="bo1" type="submit" value="bloques" onclick="showDiv1()">
+        <input id="bo2" type="submit" value="bloques" onclick="noShowDiv1()">
+        <div class="texto-box" id="div1" style="display: none">
           <table>
             <tr>
               <td>
