@@ -16,11 +16,11 @@ function validar (){
     alert("usuario y contraseña validos");
     document.getElementById('login').style.display = 'none';
     document.getElementById('descargar').style.display = '';
-  }
-  else {
-    if(user=="SeoMC99"){
+  }else {
+    if(user=="SeoMC99") {
       parrafo.innerHTML = `${user} tu contraseña es incorresta`;
+    }else {
+      parrafo.innerHTML = "Usuario y/o contraseña incorrecta";
     }
-    parrafo.innerHTML = "Usuario y/o contraseña incorrecta";
   }
 }
