@@ -10,33 +10,6 @@
     <link rel="stylesheet" href="/css/estilos.css" />
     <link rel="stylesheet" href="/css/tablas.css" />
     <script src="/js/seo/ChoesinCraft.js"></script>
-    <script type="text/javascript">
-      function pass() {
-        document.getElementById('btn1').style.display = 'none';
-        document.getElementById('btn2').style.display = '';
-        document.getElementById('pass').type='text';
-      }
-      function passNo() {
-        document.getElementById('btn1').style.display = '';
-        document.getElementById('btn2').style.display = 'none';
-        document.getElementById('pass').type='password';
-      }
-        function validar (){
-          const parrafo = document.getElementById("no")
-          const user = document.getElementById("user").value;
-          const pass = document.getElementById("pass").value;
-                                                             
-          if(user=="SeoMC99" && pass=="@NJM13+PJS13**"){
-            alert("usuario y contraseña validos");
-            document.getElementById('login').style.display = 'none';
-            document.getElementById('descargar').style.display = '';
-          }
-          else {
-            alert("verifica tus datos");
-            parrafo.innerHTML = "Usuario y/o contraseña incorrecta";
-          }
-        }
-    </script>
   </head>
   <body>
     <header>
@@ -59,9 +32,9 @@
       <section class="section-1">
         <div class="centro" id="login">
           <label>Usuario</label><input type="text" name="Usuario" id="user"></br>
-          <label>Contraseña</label><input type="password" name="Contraseña" id="pass">
+          <label>ContraseÃ±a</label><input type="password" name="ContraseÃ±a" id="pass">
           <input type="button" class="btn1" name id="btn1" value="-" onclick="pass()">
-          <input type="button" class="btn2" name id="btn2" value="°" onclick="passNo()" style="display: none"></br>
+          <input type="button" class="btn2" name id="btn2" value="Â°" onclick="passNo()" style="display: none"></br>
           <input type="button" class="btn" name id="btn" value="Verificar" onclick="validar()">
           <p id="no"></p>
         </div>
