@@ -8,6 +8,20 @@
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/css/links.css" />
     <link rel="stylesheet" href="/css/estilos.css" />
+    <script src="/js/esconder.js"></script>
+    <script type="text/javascript>
+                  function validar (){
+                    var user = document.getElementById("user").value;
+                    var pass = document.getElementById("pass").value;
+                                                             
+                    if(user=="1" && pass=="2"){
+                      alert("usuario y contraseña validos");
+                      document.getElementById('login').style.display = 'none';
+                      document.getElementById('descargar').style.display = '';
+                    }
+                    else {alert("verifica tus datos");}
+                  }
+    </script>
   </head>
   <body>
     <header>
@@ -28,7 +42,12 @@
     </header>
     <main>
       <section class="section-1">
-        <div class="contenedor">
+        <div class="centro" id="login">
+          <label>Usuario</label><input type="text" name="Usuario" id="user">
+          <label>Contraseña</label><input type="password" name="Contraseña" id="pass">
+          <input type="button" name id="btn" value="Verificar" onclick="validar()">
+        </div>
+        <div class="contenedor" id="descargar" style="display: none">
           <div class="galeria-port">
             <div class="imagen-port">
               <img src="https://www.youtube.com/img/favicon_144.png" alt="" />
