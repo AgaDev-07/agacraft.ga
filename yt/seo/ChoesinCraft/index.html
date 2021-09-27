@@ -14,12 +14,12 @@
       function pass() {
         document.getElementById('btn1').style.display = 'none';
         document.getElementById('btn2').style.display = '';
-        document.getElementById('btn2').type='text';
+        document.getElementById('pass').type='text';
       }
       function passNo() {
         document.getElementById('btn1').style.display = '';
         document.getElementById('btn2').style.display = 'none';
-        document.getElementById('btn2').type='password';
+        document.getElementById('pass').type='password';
       }
         function validar (){
           const parrafo = document.getElementById("no")
@@ -60,9 +60,9 @@
         <div class="centro" id="login">
           <label>Usuario</label><input type="text" name="Usuario" id="user"></br>
           <label>Contraseña</label><input type="password" name="Contraseña" id="pass">
-          <input type="button" class name id="btn1" value="-" onclick="pass()">
-          <input type="button" class name id="btn2" value="°" onclick="passNo()"></br>
-          <input type="button" class name id="btn" value="Verificar" onclick="validar()">
+          <input type="button" class="btn1" name id="btn1" value="-" onclick="pass()" style="display: none">
+          <input type="button" class="btn2" name id="btn2" value="°" onclick="passNo()"></br>
+          <input type="button" class="btn" name id="btn" value="Verificar" onclick="validar()">
           <p id="no"></p>
         </div>
         <div class="contenedor" id="descargar" style="display: none">
