@@ -12,15 +12,19 @@
     <script src="/js/seo/ChoesinCraft.js"></script>
     <script type="text/javascript">
                   function validar (){
-                    var user = document.getElementById("user").value;
-                    var pass = document.getElementById("pass").value;
+                    const parrafo = document.getElementById("no")
+                    const user = document.getElementById("user").value;
+                    const pass = document.getElementById("pass").value;
                                                              
                     if(user=="1" && pass=="2"){
                       alert("usuario y contraseña validos");
                       document.getElementById('login').style.display = 'none';
                       document.getElementById('descargar').style.display = '';
                     }
-                    else {alert("verifica tus datos");}
+                    else {
+                      alert("verifica tus datos");
+                      parrafo.innerHTML = "Usuario y/o contraseña incorrecta";
+                    }
                   }
     </script>
   </head>
@@ -47,6 +51,7 @@
           <label>Usuario</label><input type="text" name="Usuario" id="user"></br>
           <label>Contraseña</label><input type="password" name="Contraseña" id="pass"></br>
           <input type="button" name id="btn" value="Verificar" onclick="validar()">
+          <p id="no"></p>
         </div>
         <div class="contenedor" id="descargar" style="display: none">
           <div class="galeria-port">
