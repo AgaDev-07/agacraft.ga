@@ -1,12 +1,26 @@
-const cuentas = require('/data/cuentas.json');
-var pass = prompt("Ingresa la contraseña");
-var pass1 = cuentas.seomc99.pass.1;
-var pass2 = cuentas.seomc99.pass.2;
-
-if(pass == pass1||pass == pass2){
-  location.href="https://www.mediafire.com/file/du063qv9gtiosxo/ChoesinCraft.mcaddon/file";
+function pass() {
+document.getElementById('btn1').style.display = 'none';
+document.getElementById('btn2').style.display = '';
+document.getElementById('pass').type='text';
 }
-else{
-  alert("la contraseña es incorrecta porfavor verifica que la estes ingresando correctamente");
-  location.href="/seo/ChoesinCraft";
+function passNo() {
+  document.getElementById('btn1').style.display = '';
+  document.getElementById('btn2').style.display = 'none';
+  document.getElementById('pass').type='password';
+}
+function validar (){
+  const parrafo = document.getElementById("no")
+  const user = document.getElementById("user").value;
+  const pass = document.getElementById("pass").value;
+  if(user=="SeoMC99" && pass=="@NJM13+PJS13**"){
+    alert("usuario y contraseña validos");
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('descargar').style.display = '';
+  }
+  else {
+    if(user=="SeoMC99"){
+      parrafo.innerHTML = `${user} tu contraseña es incorresta`;
+    }
+    parrafo.innerHTML = "Usuario y/o contraseña incorrecta";
+  }
 }
