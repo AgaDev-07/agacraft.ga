@@ -6,24 +6,24 @@
 #user, #pass{
   padding: 1px 1px;
   text-align: center;
-  background-color: var(--negro);
-  color: var(--blanco);
+  background-color: rgb(36, 36, 36);
+  color: rgb(255, 255, 255);
   box-shadow: 0 0;
-  border: 2px solid var(--cielo);
+  border: 2px solid rgb(0, 255, 255);
   border-radius: 8px;
 }
 #user:hover, #pass:hover{
   color: var(--negro);
-  background-color: var(--cielo);
-  box-shadow: 0 0 1px var(--cielo), 0 0 4px var(--cielo), 0 0 8px var(--cielo);
+  background-color: rgb(0, 255, 255);
+  box-shadow: 0 0 1px rgb(0, 255, 255), 0 0 4px rgb(0, 255, 255), 0 0 8px rgb(0, 255, 255);
 }
 #pass{
   width: 130px;
 }
 .btnm{
   font-family: Minecraft;
-  background-color: var(--negro);
-  border: 2px solid var(--cielo);
+  background-color: rgb(36, 36, 36);
+  border: 2px solid rgb(0, 255, 255);
   color: #fff;
   padding: 1px 6px;
   text-align: center;
@@ -37,16 +37,16 @@
   border-radius: 10px;
 }
 .btnm:hover{
-  background-color: var(--cielo);
+  background-color: rgb(0, 255, 255);
   border: 2px solid rgb(0,150, 255);
-  color: var(--negro);
-  box-shadow: 0 0 10px var(--cielo), 0 0 40px var(--cielo), 0 0 80px var(--cielo);
+  color: rgb(36, 36, 36);
+  box-shadow: 0 0 10px rgb(0, 255, 255), 0 0 40px rgb(0, 255, 255), 0 0 80px rgb(0, 255, 255);
 }
 
 .btn{
   font-family: Minecraft;
-  background-color: var(--negro);
-  border: 2px solid var(--cielo);
+  background-color: rgb(36, 36, 36);
+  border: 2px solid rgb(0, 255, 255);
   color: #fff;
   padding: 15px 32px;
   text-align: center;
@@ -60,8 +60,8 @@
   border-radius: 10px;
 }
 .btn:hover{
-  background-color: var(--cielo);
+  background-color: rgb(0, 255, 255);
   border: 2px solid rgb(0,150, 255);
-  color: var(--negro);
-  box-shadow: 0 0 10px var(--cielo), 0 0 40px var(--cielo), 0 0 80px var(--cielo);
+  color: rgb(36, 36, 36);
+  box-shadow: 0 0 10px rgb(0, 255, 255), 0 0 40px rgb(0, 255, 255), 0 0 80px rgb(0, 255, 255);
 }
