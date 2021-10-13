@@ -24,7 +24,7 @@ function validar (){
     if(user=="SeoMC99") {
       parrafo.innerHTML = `${user} tu contraseña es incorresta`;
     }else {
-      parrafo.innerHTML = "Usuario y/o contraseña incorrecta";
+      parrafo.innerHTML = `"${user}" no tienes autorizacion de acceder`;
     }
   }
 }
