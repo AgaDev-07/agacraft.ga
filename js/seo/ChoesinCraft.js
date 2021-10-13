@@ -17,7 +17,7 @@ function validar (){
   if(user=="SeoMC99" && contra==true){
     console.log(contra);
     alert("usuario y contraseña validos");
-    document.getElementById('login').style.display = '';
+    document.getElementById('login').style.display = 'none';
     document.getElementById('descargar').style.display = '';
   }else {
     console.log(contra);
