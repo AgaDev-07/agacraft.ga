@@ -12,19 +12,19 @@ function validar (){
   const parrafo = document.getElementById("no")
   const user = document.getElementById("user").value;
   const pass = document.getElementById("pass").value;
-  const validate = /^@([^A-MO-Z][^A-IK-Z][^A-LN-Z][1][3])([+])([^A-OQ-Z][^A-IK-Z][^A-RT-Z][1][3])([*][*])$/;
+  const validate = /^@([^0-9A-MO-Za-z][^0-9A-IK-Za-z][^0-9A-LN-Za-z][1][3])([+])([^0-9A-OQ-Za-z][^0-9A-IK-Za-z][^0-9A-RT-Za-z][1][3])([*][*])$/;
   const contra = validate.test(pass);
   if(user=="SeoMC99" && contra==true){
     console.log(contra);
     alert("usuario y contraseña validos");
-    document.getElementById('login').style.display = 'none';
+    document.getElementById('login').style.display = '';
     document.getElementById('descargar').style.display = '';
   }else {
     console.log(contra);
     if(user=="SeoMC99") {
       parrafo.innerHTML = `${user} tu contraseña es incorresta`;
     }else {
-      parrafo.innerHTML = `"${user}" no tienes autorizacion de acceder`;
+      parrafo.innerHTML = `"${user}" contraseña incorrecta`;
     }
   }
 }
