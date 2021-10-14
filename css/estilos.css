@@ -126,6 +126,21 @@ header .textos-header{
   object-fit: cover;
   display: block;
 }
+.imagen-craft{
+  width: 40%;
+  height: 40%;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+.imagen-craft > img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .hover-galeria{
   border-radius: 15px;
   position: absolute;
@@ -142,21 +157,6 @@ header .textos-header{
 }
 .hover-galeria /img{
   width: 50px;
-}
-.imagen-craft{
-  width: 40%;
-  height: 40%;
-  margin-bottom: 10px;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-  box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
-}
-.imagen-craft > img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
 }
 .hover-galeria p{
   color: #fff;
