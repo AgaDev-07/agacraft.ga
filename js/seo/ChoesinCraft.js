@@ -16,7 +16,6 @@ function validar (){
   const contra = validate.test(pass);
   if(user=="SeoMC99" && contra==true){
     console.log(contra);
-    alert("usuario y contraseña validos");
     document.getElementById('login').style.display = 'none';
     document.getElementById('descargar').style.display = '';
   }else {
@@ -24,7 +23,7 @@ function validar (){
     if(user=="SeoMC99") {
       parrafo.innerHTML = `${user} tu contraseña es incorresta`;
     }else {
-      parrafo.innerHTML = `"${user}" contraseña incorrecta`;
+      parrafo.innerHTML = `"${user}" invalido`;
     }
   }
 }
