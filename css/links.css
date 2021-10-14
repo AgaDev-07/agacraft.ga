@@ -8,3 +8,10 @@
   color:#0ff;
   text-decoration: underline;
 }
+.link{
+  color:#0ff;
+  text-decoration: none;
+}
+.link:hover{
+  text-decoration: underline;
+}
