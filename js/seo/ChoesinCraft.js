@@ -27,3 +27,9 @@ function validar (){
     }
   }
 }
+document.addEventListener('keydown', function(tecla){
+  var codigoTecla = tecla.keyCode;
+  if(codigoTecla == 13){
+    validar();
+  }
+});
