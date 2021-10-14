@@ -1,5 +1,8 @@
 #user, #pass{
-  padding: 1px 1px;
+  font-family: Minecraft;
+  font-size: 18px;
+  padding: 1px 0px;
+  margin: 5px auto;
   text-align: center;
   background-color: rgb(36, 36, 36);
   color: rgb(255, 255, 255);
@@ -13,19 +16,22 @@
   box-shadow: 0 0 1px rgb(0, 255, 255), 0 0 4px rgb(0, 255, 255), 0 0 8px rgb(0, 255, 255);
 }
 #pass{
-  width: 130px;
+  width: 140px;
+}
+#user{
+  width: 186px;
 }
 .btnm{
   font-family: Minecraft;
   background-color: rgb(36, 36, 36);
   border: 2px solid rgb(0, 255, 255);
   color: #fff;
-  padding: 1px 6px;
+  padding: 1px 7px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 4px 1px;
   cursor: pointer;
   font-size: 20px;
   transition-duration: 0.5;
