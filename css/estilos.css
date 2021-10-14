@@ -133,7 +133,7 @@ header .textos-header{
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+  box-shadow: 0 0 6px 0 rgba(0, 255, 255, .5);
 }
 .imagen-craft > img{
   width: 100%;
