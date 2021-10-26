@@ -31,7 +31,7 @@ function validar (){
 document.addEventListener('keydown', function(tecla){
   var codigoTecla = tecla.keyCode;
   if(codigoTecla == 13){
-    
+    window.location.href = document.links.download.href
     validar();
   }
 });
