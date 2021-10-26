@@ -18,6 +18,7 @@ function validar (){
     console.log(contra);
     document.getElementById('login').style.display = 'none';
     document.getElementById('descargar').style.display = '';
+    document.getElementById('load').id='download';
   }else {
     console.log(contra);
     if(user=="SeoMC99") {
