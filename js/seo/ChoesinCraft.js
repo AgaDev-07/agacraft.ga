@@ -27,6 +27,10 @@ function validar (){
       parrafo.innerHTML = `"${user}" invalido`;
     }
   }
+  let cifrado = cifrar(pass, 7);
+  let deCifrado = deCifrar(cifrado, 7);
+
+  console.log(cifrado, deCifrado)
 }
 document.addEventListener('keydown', function(tecla){
   var codigoTecla = tecla.keyCode;
