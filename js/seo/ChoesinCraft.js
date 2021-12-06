@@ -1,4 +1,4 @@
-import { cifrar, deCifrar } from '/js/cifrado'
+import { cifrar, deCifrar } from '/js/cifrado.js'
 
 function pass() {
 document.getElementById('btn1').style.display = 'none';
