@@ -34,12 +34,5 @@ function validar() {
 
   console.log(cifrado, deCifrado)
 }
-document.addEventListener('keydown', function (tecla) {
-  var codigoTecla = tecla.keyCode;
-  if (codigoTecla == 13) {
-    window.location.href = document.links.download.href;
-    validar();
-  }
-});
 
 export { pass, passNo, validar }
