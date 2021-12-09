@@ -7,13 +7,6 @@ function cifrar(texto, desplazamiento=7) {
   desplazamiento = (desplazamiento % n + n) % n;
   return texto.replace(/[A-Z+*0-9]/ig, c => letras[(letras.indexOf(c) + desplazamiento) % n])
 }
-function deCifrar(texto, desplazamiento=7) {
-  if (!texto) return '';
-  texto = texto.toUpperCase()
-  desplazamiento = (desplazamiento % n - n) % n;
-  return texto.replace(/[A-Z+*0-9]/ig, c => letras[(letras.indexOf(c) - desplazamiento) % n])
-}
-
 function pass() {
   document.getElementById('btn1').style.display = 'none';
   document.getElementById('btn2').style.display = '';
@@ -28,7 +21,7 @@ function validar() {
   const parrafo = document.getElementById("no")
   const user = document.getElementById("user").value;
   const pass = document.getElementById("pass").value;
-const contra = cifrar(cifrar(cifrar(pass))) === '';
+const contra = cifrar(cifrar(cifrar(pass))) === '@625MOJ82BMOKK'
   if (user === "SeoMC99" && contra) {
     console.log(contra);
     document.getElementById('login').style.display = 'none';
