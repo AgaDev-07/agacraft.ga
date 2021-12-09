@@ -1,16 +1,17 @@
-const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ+*0123456789';
+const n = letras.length
 
-function cifrar(texto, desplazamiento) {
+function cifrar(texto, desplazamiento=7) {
   if (!texto) return '';
   texto = texto.toUpperCase()
-  desplazamiento = (desplazamiento % 26 + 26) % 26;
-  return texto.replace(/[A-Z]/ig, c => letras[(letras.indexOf(c) + desplazamiento) % 26])
+  desplazamiento = (desplazamiento % n + n) % n;
+  return texto.replace(/[A-Z+*0-9]/ig, c => letras[(letras.indexOf(c) + desplazamiento) % n])
 }
-function deCifrar(texto, desplazamiento) {
+function deCifrar(texto, desplazamiento=7) {
   if (!texto) return '';
   texto = texto.toUpperCase()
-  desplazamiento = (desplazamiento % 26 - 26) % 26;
-  return texto.replace(/[A-Z]/ig, c => letras[(letras.indexOf(c) - desplazamiento) % 26])
+  desplazamiento = (desplazamiento % n - n) % n;
+  return texto.replace(/[A-Z+*0-9]/ig, c => letras[(letras.indexOf(c) - desplazamiento) % n])
 }
 
 function pass() {
@@ -27,10 +28,8 @@ function validar() {
   const parrafo = document.getElementById("no")
   const user = document.getElementById("user").value;
   const pass = document.getElementById("pass").value;
-  const validate = /^@([^0-9A-MO-Za-z][^0-9A-IK-Za-z][^0-9A-LN-Za-z][1][3])([+])([^0-9A-OQ-Za-z][^0-9A-IK-Za-z][^0-9A-RT-Za-z][1][3])([*][*])$/;
-const mseo= process.env['seo'] || 5
-const contra = validate.test(pass);
-  if (user == "SeoMC99" && contra == true) {
+const contra = cifrar(cifrar(cifrar(pass))) === '';
+  if (user === "SeoMC99" && contra) {
     console.log(contra);
     document.getElementById('login').style.display = 'none';
     document.getElementById('descargar').style.display = '';
