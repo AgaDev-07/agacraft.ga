@@ -17,7 +17,7 @@ function passNo() {
   document.getElementById('btn2').style.display = 'none';
   document.getElementById('pass').type = 'password';
 }
-function validar() {
+function download() {
   const parrafo = document.getElementById("no")
   const user = document.getElementById("user").value;
   const pass = document.getElementById("pass").value;
@@ -27,7 +27,7 @@ function validar() {
     console.log(contra);
     document.getElementById('login').style.display = 'none';
     document.getElementById('descargar').style.display = '';
-    document.getElementById('load').id = 'download';
+  new Error()
   } else {
     console.log(contra);
     if (user == "SeoMC99") {
