@@ -1,16 +1,15 @@
-const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const letters = 'ABCabcDEFdefGHIghiJKLjklMNOmnoPQRpqrSTUstuVWXvwxYZyz0123456789-@+*?¿()[]{}<>#$&!|°';
+const numberLetters = letters.length
 
-function cifrar(texto, desplazamiento) {
+function cifrar(texto, desplazamiento=1) {
   if (!texto) return '';
-  texto = texto.toUpperCase()
-  desplazamiento = (desplazamiento % 26 + 26) % 26;
-  return texto.replace(/[A-Z]/ig, c => letras[(letras.indexOf(c) + desplazamiento) % 26])
+  desplazamiento = (desplazamiento % numberLetters + numberLetters) % numberLetters;
+  return texto.replace(/[A-Z]/ig, c => letters[(letters.indexOf(c) + desplazamiento) % numberLetters])
 }
-function deCifrar(texto, desplazamiento) {
+function deCifrar(texto, desplazamiento=1) {
   if (!texto) return '';
-  texto = texto.toUpperCase()
-  desplazamiento = (desplazamiento % 26 - 26) % 26;
-  return texto.replace(/[A-Z]/ig, c => letras[(letras.indexOf(c) - desplazamiento) % 26])
+  desplazamiento = (desplazamiento % numberLetters - numberLetters) % numberLetters;
+  return texto.replace(/[A-Z]/ig, c => letters[(letters.indexOf(c) - desplazamiento) % numberLetters])
 }
 
 export { cifrar, deCifrar }

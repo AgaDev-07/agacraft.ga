@@ -1,39 +1,27 @@
-const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ+*0123456789';
-const n = letras.length
+const btn1 = document.getElementById('btn1')
+const btn2 = document.getElementById('btn2')
+const password = document.getElementById('pass')
 
-function cifrar(texto, desplazamiento=7) {
-  if (!texto) return '';
-  const textoMayuscula = texto.toUpperCase();
-  const desplazamientoCalculo = (desplazamiento % n + n) % n;
-  return textoMayuscula.replace(/[A-Z+*0-9]/ig, c => letras[(letras.indexOf(c) + desplazamientoCalculo) % n])
+const parrafo = document.getElementById("no")
+const counts = {
+  SeoMC99: 'password'
 }
+
 function pass() {
-  document.getElementById('btn1').style.display = 'none';
-  document.getElementById('btn2').style.display = '';
-  document.getElementById('pass').type = 'text';
+  btn1.style.display = 'none';
+  btn2.style.display = '';
+  password.type = 'text';
 }
 function passNo() {
-  document.getElementById('btn1').style.display = '';
-  document.getElementById('btn2').style.display = 'none';
-  document.getElementById('pass').type = 'password';
+  btn1.style.display = '';
+  btn2.style.display = 'none';
+  password.type = 'password';
 }
 function download() {
-  const parrafo = document.getElementById("no")
   const user = document.getElementById("user").value;
-  const pass = document.getElementById("pass").value;
-  const password = `@${(50 * 12)+(5*5)}MOJ${1+(9*9)}BMOKK`
-  const contra = cifrar(cifrar(cifrar(pass))) === password;
-  if (user === "SeoMC99" && contra) {
-    console.log(contra);
+  const contra = cifrar(cifrar(cifrar(counts[user]||'')))
+  if (counts[user] === contra) {
     document.getElementById('login').style.display = 'none';
     document.getElementById('descargar').style.display = '';
-  new Error()
-  } else {
-    console.log(contra);
-    if (user == "SeoMC99") {
-      parrafo.innerHTML = `${user} tu contraseña es incorresta`;
-    } else {
-      parrafo.innerHTML = `"${user}" invalido`;
-    }
-  }
+  } else parrafo.innerHTML = `usuario o contraseña incorrecta`
 }
