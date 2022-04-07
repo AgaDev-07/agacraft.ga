@@ -23,5 +23,5 @@ function download() {
   if (counts[user] === contra) {
     document.getElementById('login').style.display = 'none';
     document.getElementById('descargar').style.display = '';
-  } else parrafo.innerHTML = `usuario o contraseña incorrecta`
+  } else parrafo.innerHTML = `usuario o contraseña incorrecta ${contra}`
 }
