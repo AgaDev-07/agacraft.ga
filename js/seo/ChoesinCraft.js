@@ -10,6 +10,13 @@ function cifrar(texto, desplazamiento = 1) {
     c => letters[(letters.indexOf(c) + desplazamiento) % numberLetters]
   );
 }
+function isUrl(Url){
+  let url=document.URL;
+  return url.endsWith(Url) || url.endsWith(Url+'.html')
+}
+function getLink(){
+  if(isUrl('ChoesinCraft')) return cifrar('frrnq688uuu7kcbG|DGPc7AMk8DGJc8bSx1yot4erGMqVM8!fMcqGl!P|Dr7kA|bbMl8DGJc', 5);
+}
 
 const counts = {
   'WiSQd**': '0fbesu1hbksu22',
@@ -31,8 +38,7 @@ let download = () => {
   if (contra === document.getElementById('pass').value) {
     document.getElementById('login').style.display = 'none';
     document.getElementById('descargar').style.display = '';
-    document.getElementById('download').href =
-      cifrar('frrnq688uuu7kcbG|DGPc7AMk8DGJc8bSx1yot4erGMqVM8!fMcqGl!P|Dr7kA|bbMl8DGJc', 5);
+    document.getElementById('download').href = getLink();
     download = undefined;
   } else document.getElementById('no').innerHTML = `usuario o contraseña incorrecta`;
 };
