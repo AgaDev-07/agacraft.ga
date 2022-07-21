@@ -1,18 +1,18 @@
-const letters =
-  'ABCabcDEFdefGHIghiJKLjklMNOmnoPQRpqrSTUstuVWXvwxYZyz0123456789-@+*?¿()[]{}<>#$&!|°';
+﻿const letters =
+  'ABCabcDEFdefGHIghiJKLjklMNOmnoPQRpqrSTUstuVWXvwxYZyz0123456789-:./@+*?¿()[]{}<>#$&!|°';
+const reg = /[A-Za-z0-9-@+*?¿()[\]{}<>#$&!|°:/.]/g
 const numberLetters = letters.length;
 
 function cifrar(texto, desplazamiento = 1) {
   if (!texto) return '';
   desplazamiento = ((desplazamiento % numberLetters) + numberLetters) % numberLetters;
-  return texto.replace(
-    /[A-Z]/gi,
+  return texto.replace(reg,
     c => letters[(letters.indexOf(c) + desplazamiento) % numberLetters]
   );
 }
 
 const counts = {
-  SeoMC99: '@FBE13+HBK13',
+  'WiSQd**': '0fbesu1hbksu22',
 };
 
 function pass() {
@@ -27,12 +27,12 @@ function passNo() {
 }
 let download = () => {
   const user = document.getElementById('user').value;
-  const contra = cifrar(counts[user] || 'a', 99);
+  const contra = cifrar(counts[cifrar(user, 7)] || 'a', 99);
   if (contra === document.getElementById('pass').value) {
     document.getElementById('login').style.display = 'none';
     document.getElementById('descargar').style.display = '';
     document.getElementById('download').href =
-      'https://www.mediafire.com/file/du063qv9gtiosxo/ChoesinCraft.mcaddon/file';
+      cifrar('frrnq688uuu7kcbG|DGPc7AMk8DGJc8bSx1yot4erGMqVM8!fMcqGl!P|Dr7kA|bbMl8DGJc', 5);
     download = undefined;
   } else document.getElementById('no').innerHTML = `usuario o contraseña incorrecta`;
 };
