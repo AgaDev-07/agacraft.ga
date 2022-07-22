@@ -16,8 +16,9 @@ function isUrl(Url){
 }
 function getLink(){
   if(isUrl('ChoesinCraft')) return cifrar('frrnq688uuu7kcbG|DGPc7AMk8DGJc8bSx1yot4erGMqVM8!fMcqGl!P|Dr7kA|bbMl8DGJc', 5);
-  if(isUrl('Home')) return 'https://www.mediafire.com/file/0hnrnbcqpk3gdpz/Home_seo.mcaddon/file'
-  return ''
+  if(isUrl('Home')) return cifrar('frrnq688uuu7kcbG|DGPc7AMk8DGJc8xflPl°Aoniyebnw8FMkc_qcM7kA|bbMl8DGJc', 5)
+  alert('no se pudo encontrar el link que nesesitas')
+  return '#'
 }
 
 const counts = {
