@@ -1,12 +1,12 @@
-getDefault()
+getDefault();
 function getDefault() {
-  const $ = e => document.querySelector(e);
+  const $ = (e) => document.querySelector(e);
   let interval;
   let fn = () => FN();
   let FN = () => {
-    $('nav').innerHTML += nav;
-    $('footer').innerHTML += footer;
-    $('header').innerHTML += wave;
+    $("nav").innerHTML += nav;
+    $("footer").innerHTML += footer;
+    $("header").innerHTML += wave;
     FN = () => {
       clearInterval(interval);
       interval = null;
@@ -22,34 +22,34 @@ function getDefault() {
 function getApi(page) {
   return {
     addons: [
-      'Iron-Chest',
-      'Waila',
-      'Home',
-      'Fundas-de-equipamiento',
-      'Chisel',
-      'Variantes-de-madera',
+      "Iron-Chest",
+      "Waila",
+      "Home",
+      "Fundas-de-equipamiento",
+      "Chisel",
+      "Variantes-de-madera",
     ],
-    texturas: ['Escudo-secundario'],
-    seo: ['Home', 'ChoesinCraft'],
+    texturas: ["Escudo-secundario"],
+    JunMC13: ["Home", "ChoesinCraft"],
   }[page];
 }
 function addApiTA(page) {
   let interval;
   let Api = () => {
-    document.querySelector('.galeria-port').innerHTML += getApi(page)
+    document.querySelector(".galeria-port").innerHTML += getApi(page)
       .map(
-        name =>
+        (name) =>
           `<div class="imagen-port">
         <img src="/img/${page}/${name}/icono.png" alt="" />
         <a href="/${page}/${name}">
           <div class="hover-galeria">
             <img src="/img/click.png" alt="" />
-            <p>${name.replace('-', ' ')}</p>
+            <p>${name.replace("-", " ")}</p>
           </div>
         </a>
       </div>`
       )
-      .join('');
+      .join("");
     Api = () => {
       clearInterval(interval);
       interval = null;
@@ -65,10 +65,10 @@ function addApiTA(page) {
 function addApiIndex() {
   let interval;
   let Api = () => {
-    document.querySelector('main').innerHTML += [
-      { title: 'Addon mas reciente', page: 'addons' },
-      { title: 'Textura mas reciente', page: 'texturas' },
-      { title: 'Contenido mas reciente para SeoMC99', page: 'seo' },
+    document.querySelector("main").innerHTML += [
+      { title: "Addon mas reciente", page: "addons" },
+      { title: "Textura mas reciente", page: "texturas" },
+      { title: "Contenido mas reciente para JunMC13", page: "JunMC13" },
     ]
       .map(({ title, page }, i) => {
         let name = getApi(page)[0];
@@ -83,7 +83,7 @@ function addApiIndex() {
                   <a href="/${page}/${name}">
                     <div class="hover-galeria">
                       <img src="/img/click.png" alt="">
-                      <p>${name.replace('-', ' ')}</p>
+                      <p>${name.replace("-", " ")}</p>
                     </div>
                   </a>
                 </div>
@@ -91,7 +91,7 @@ function addApiIndex() {
             </div>
           </section>`;
       })
-      .join('');
+      .join("");
     Api = () => {
       clearInterval(interval);
       interval = null;
