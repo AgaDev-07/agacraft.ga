@@ -57,6 +57,13 @@ header {
 }
 header#JunMC13 {
   background: url(/img/JunMC13/fondo.png);
+  background-size: cover;
+}
+header#JunMC13 > nav > a{
+  color:rgb(26, 26, 26);
+}
+header#JunMC13 > section > h1{
+  color:rgb(26, 26, 26);
 }
 nav{
   text-align: right;
