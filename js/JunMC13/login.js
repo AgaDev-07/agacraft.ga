@@ -21,7 +21,7 @@ function getLink(){
 }
 
 const counts = {
-  fqji$wY: 'Yfbe<su1hbksuY',
+  'NYrQd8-': 'Yfbe<su1hbksuY',
 };
 function pass() {
   document.getElementById('btn').value = 'o';
