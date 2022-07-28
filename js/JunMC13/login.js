@@ -1,4 +1,4 @@
-﻿﻿const letters =
+const letters =
   'ABCabcDEFdefGHIghiJKLjklMNOmnoPQRpqrSTUstuVWXvwxYZyz0123456789-:./@+*?¿()[]{}<>#$&!|°';
 const reg = /[A-Za-z0-9-@+*?¿()[\]{}<>#$&!|°:/.]/g
 const numberLetters = letters.length;
@@ -14,8 +14,9 @@ function isUrl(Url){
   return url.endsWith(Url) || url.endsWith(Url+'.html')
 }
 function getLink(){
-  if(isUrl('ChoesinCraft')) return cifrar('frrnq688uuu7kcbG|DGPc7AMk8DGJc8bSx1yot4erGMqVM8!fMcqGl!P|Dr7kA|bbMl8DGJc', 5);
-  if(isUrl('Home')) return cifrar('frrnq688uuu7kcbG|DGPc7AMk8DGJc8xflPl°Aoniyebnw8FMkc_qcM7kA|bbMl8DGJc', 5)
+  if(isUrl('ChoesinCraft')) return 'frrnq688uuu7kcbG|DGPc7AMk8DGJc8bSx1yot4erGMqVM8!fMcqGl!P|Dr7kA|bbMl8DGJc';
+  if(isUrl('Home')) return 'frrnq688uuu7kcbG|DGPc7AMk8DGJc8xflPl°Aoniyebnw8FMkc_qcM7kA|bbMl8DGJc';
+  if(isUrl('Textues')) return 'frrnq688uuu7kcbG|DGPc7AMk8DGJc8tfJS22lhzwrwo4°8RcVrSPcq7kA|bbMl8DGJc';
   alert('no se pudo encontrar el link que nesesitas')
   return '#'
 }
@@ -39,7 +40,7 @@ let download = () => {
   if (contra === document.getElementById('pass').value) {
     document.getElementById('login').style.display = 'none';
     document.getElementById('descargar').style.display = '';
-    document.getElementById('download').href = getLink();
+    document.getElementById('download').href = cifrar(getLink(), 5);
     download = undefined;
   } else document.getElementById('no').innerHTML = `usuario o contraseña incorrecta`;
 };
