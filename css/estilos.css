@@ -58,6 +58,7 @@ header {
 header#JunMC13 {
   background: url(/img/JunMC13/fondo.png);
   background-size: cover;
+  background-attachment: fixed;
 }
 header#JunMC13 > nav > a{
   color:rgb(26, 26, 26);
