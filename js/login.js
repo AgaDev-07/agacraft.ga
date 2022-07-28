@@ -13,7 +13,12 @@ function isUrl(Url){
   let url=document.URL;
   return url.endsWith(Url) || url.endsWith(Url+'.html')
 }
-
+function getLink(){
+  const keys = Object.keys(url);
+  const URL = keys.map(Url=>isUrl(Url)?url[Url]||'').join('');
+  alert('no se pudo encontrar el link que nesesitas')
+  return URL || '#'
+}
 function pass() {
   document.getElementById('btn').value = 'o';
   document.getElementById('btn').onclick = () => passNo();
