@@ -23,6 +23,7 @@ function getLink(){
 
 const counts = {
   'NYrQd8-': 'Yfbe<su1hbksuY',
+  EkedVeJx: '0xL}JV#v'
 };
 function pass() {
   document.getElementById('btn').value = 'o';
