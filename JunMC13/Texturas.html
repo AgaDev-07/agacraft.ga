@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Texturas(addon)|AdrianCraft</title>
+	<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="/css/links.css" />
+	<link rel="stylesheet" href="/css/estilos.css" />
+	<link rel="stylesheet" href="/css/botones.css" />
+  <script src="/js/JunMC13/login.js"></script>
+  <script src="/js/download.js"></script>
+  <script src="/js/api/data.js"></script>
+  <script src="/js/api/runner.js"></script>
+</head>
+
+<body>
+    <header id="JunMC13">
+		<nav>
+		</nav>
+		<section class="textos-header">
+			<h1>ChoesinCraft</h1>
+		</section>
+	</header>
+	<main>
+		<section class="section-1">
+			<div class="centro" id="login">
+				<label>Usuario</label><input type="text" name="Usuario" id="user"></br>
+          <label>Contraseña</label><input type="password" name="Contraseña" id="pass">
+          <input type="button" class="btnm" id="btn" value="-" onclick="pass()">
+          <input type="button" class="btnm" id="btn2" value="o" onclick="passNo()" style="display: none"></br>
+          <input type="button" class="btn" id="btn" value="Verificar" onclick="download()">
+          <p id="no"></p>
+        </div>
+        <div class="contenedor" id="descargar" style="display: none">
+          <div class="galeria-port">
+            <div class="imagen-port">
+              <img src="/img/proximamente.png" alt="" />
+              <a id="download" href="" target="_blank">
+                <div class="hover-galeria">
+                  <img src="/img/click.png" alt="" />
+                  <p>Descargar</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+    </footer>
+  </body>
+</html>
