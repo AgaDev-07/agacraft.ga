@@ -55,6 +55,9 @@ header {
   background-attachment: fixed;
   position: relative;
 }
+header#seo {
+  background: url(../img/fondo.png);
+}
 nav{
   text-align: right;
   padding: 30px 50px 0 0;
