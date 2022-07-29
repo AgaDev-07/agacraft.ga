@@ -15,7 +15,7 @@ function isUrl(Url){
 }
 function getLink(){
   const keys = Object.keys(url);
-  const URL = keys.map(Url=>isUrl(Url)?url[Url]||'').join('');
+  const URL = keys.map(Url=>isUrl(Url)?url[Url]:'').join('');
   alert('no se pudo encontrar el link que nesesitas')
   return URL || '#'
 }
