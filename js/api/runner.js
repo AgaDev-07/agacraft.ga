@@ -30,17 +30,31 @@ function getApi(page) {
       "Variantes-de-madera",
     ],
     texturas: ["Escudo-secundario"],
-    JunMC13: ["Texturas", "Home", "ChoesinCraft"],
+    JunMC13: [{name:"Texturas",mode:'privado'}, {name:"Home",mode:'privado'}, {name:"ChoesinCraft",mode:'privado'}],
   }[page];
 }
 function addApiTA(page) {
   let interval;
   let Api = () => {
-    document.querySelector(".galeria-port").innerHTML += getApi(page)
+    document.querySelector(".galeria-port").innerHTML += page == 'JunMC13' ? getApi(page)
+    .map(
+      ({name, mode}) =>
+        `<div class="imagen-port">
+      <img src="${name=='Texturas'? '/img/proximamente.png': `/img/${page}/${name}/icono.png`}" alt="" />
+      <a href="/${page}/${name}">
+        <div class="hover-galeria">
+          <img src="/img/click.png" alt="" />
+          <p>${name.replace("-", " ")} (${mode})</p>
+        </div>
+      </a>
+    </div>`
+    )
+    .join('')
+     :document.querySelector(".galeria-port").innerHTML += getApi(page)
       .map(
         (name) =>
           `<div class="imagen-port">
-        <img src="${name=='Texturas'? '/img/proximamente.png': `/img/${page}/${name}/icono.png`}" alt="" />
+        <img src="${`/img/${page}/${name}/icono.png`}" alt="" />
         <a href="/${page}/${name}">
           <div class="hover-galeria">
             <img src="/img/click.png" alt="" />
