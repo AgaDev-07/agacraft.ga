@@ -10,9 +10,7 @@
 	<link rel="stylesheet" href="/css/links.css" />
 	<link rel="stylesheet" href="/css/estilos.css" />
 	<link rel="stylesheet" href="/css/botones.css" />
-  <script src="/js/JunMC13/data.js"></script>
   <script src="/js/login.js"></script>
-  <script src="/js/JunMC13/login.js"></script>
   <script src="/js/download.js"></script>
   <script src="/js/api/data.js"></script>
   <script src="/js/api/runner.js"></script>
@@ -31,23 +29,9 @@
 			<div class="centro" id="login">
 				<label>Usuario</label><input type="text" name="Usuario" id="user"></br>
           <label>Contraseña</label><input type="password" name="Contraseña" id="pass">
-          <input type="button" class="btnm" id="btn" value="-" onclick="pass()">
-          <input type="button" class="btnm" id="btn2" value="o" onclick="passNo()" style="display: none"></br>
-          <input type="button" class="btn" id="btn" value="Verificar" onclick="download()">
+          <input type="button" class="btnm" id="btnpass" value="-" onclick="pass()">
+          <input type="button" class="btn" id="btn" value="Verificar" onclick="download('JunMC13', 'Texturas')">
           <p id="no"></p>
-        </div>
-        <div class="contenedor" id="descargar" style="display: none">
-          <div class="galeria-port">
-            <div class="imagen-port">
-              <img src="/img/proximamente.png" alt="" />
-              <a id="download" href="" target="_blank">
-                <div class="hover-galeria">
-                  <img src="/img/click.png" alt="" />
-                  <p>Descargar</p>
-                </div>
-              </a>
-            </div>
-          </div>
         </div>
       </section>
     </main>

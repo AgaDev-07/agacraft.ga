@@ -13,33 +13,7 @@
   <script src="/js/download.js"></script>
   <script src="/js/api/data.js"></script>
   <script src="/js/api/runner.js"></script>
-  <script>
-    function pass() {
-      let x = document.getElementById("pass");
-      let btn = document.getElementById("btnpass")
-      if (x.type === "password") {
-        x.type = "text";
-        btn.value = 'o'
-      } else {
-        x.type = "password";
-        btn.value = '-'
-      }
-    }
-    function download(page, addon) {
-      let user = document.getElementById("user").value;
-      let password = document.getElementById("pass").value;
-      if (user === "") {
-        document.getElementById("no").innerHTML = "Ingrese un usuario";
-      } else if (password === "") {
-        document.getElementById("no").innerHTML = "Ingrese una contraseña";
-      } else {
-        window.location.href = `https://aga-db.herokuapp.com/${page}/${addon}?user=${stringToUrl(user)}&password=${stringToUrl(password)}`;
-      }
-    }
-    function stringToUrl(str) {
-      return str.replaceAll(' ', "%20").replaceAll('&', "%26").replaceAll('?', "%3F").replaceAll('=', "%3D").replaceAll('+', "%2B").replaceAll('#', "%23").replaceAll('/', "%2F").replaceAll('\\', "%5C").replaceAll('\'', "%27").replaceAll('\"', "%22").replaceAll('<', "%3C").replaceAll('>', "%3E").replaceAll('(', "%28").replaceAll(')', "%29").replaceAll('[', "%5B").replaceAll(']', "%5D").replaceAll('{', "%7B").replaceAll('}', "%7D").replaceAll('^', "%5E").replaceAll('$', "%24").replaceAll('!', "%21").replaceAll('*', "%2A").replaceAll('|', "%7C").replaceAll('~', "%7E").replaceAll('`', "%60");
-    }
-  </script>
+  <script src="/js/login.js"></script>
 </head>
 <body>
     <header id="JunMC13">
@@ -57,19 +31,6 @@
           <input type="button" class="btnm" id="btnpass" value="-" onclick="pass()">
           <input type="button" class="btn" id="btn" value="Verificar" onclick="download('JunMC13', 'Test')">
           <p id="no"></p>
-        </div>
-        <div class="contenedor" id="descargar" style="display: none">
-          <div class="galeria-port">
-            <div class="imagen-port">
-              <img src="/img/JunMC13/Home/icono.png" alt="" />
-              <a id="download" href="" target="_blank">
-                <div class="hover-galeria">
-                  <img src="/img/click.png" alt="" />
-                  <p>Descargar</p>
-                </div>
-              </a>
-            </div>
-          </div>
         </div>
       </section>
     </main>
