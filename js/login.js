@@ -4,10 +4,10 @@ const $$ = e => document.querySelectorAll(e);
 function pass() {
   if ($("#pass").type === "password") {
     $("#pass").type = "text";
-    btn.value = 'o'
+    $("#btnpass").value = 'o'
   } else {
     $("#pass").type = "password";
-    $("btnpass").value = '-'
+    $("#btnpass").value = '-'
   }
 }
 function download(page, addon) {
