@@ -86,6 +86,7 @@ function addApiIndex() {
     ]
       .map(({ title, page }, i) => {
         let name = getApi(page)[0];
+        if(page=='JunMC13')name=name.name
         let section = 2;
         if (Math.round(i / 2) * 2 == i) section = 1;
         return `<section class="section-${section}">
