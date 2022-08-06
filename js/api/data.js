@@ -21,7 +21,7 @@ const footer = `
   </div>
   <div class="content-foo">
     <h4>YouTube</h4>
-    <a class="link-s" target="_blank" href="https://www.youtube.com/channel/UCSJAPPOzlybP_xSJj-E5W3w">AdrianCraft</a>
+    <a class="link-s" target="_blank" href="https://youtube.com/c/Adriancraft07">AdrianCraft</a>
   </div>
 </div>
 <h2 class="titulo-final">&copy; AdrianCraft</h2>`
