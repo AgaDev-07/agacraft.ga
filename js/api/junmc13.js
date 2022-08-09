@@ -1,20 +1,19 @@
 const $ = e=>document.querySelector(e)
 
+$('head').innerHTML += '<script src="https://adriancraft07.github.io/Aga/index.js"></script'
 $('head').innerHTML += `<style>
 .card-aga{
   width: 48%;
   margin: 10px;
 }
-@media screen and (max-width:1140px){
+@media screen and (max-width:1250px){
   .card-aga{
-    width: 46%;
-    margin: 10px;
+    width: 47%;
   }
 }
-@media screen and (max-width:700px){
+@media screen and (max-width:1160px){
   .card-aga{
     width: 100%;
-    margin: 10px;
   }
 }
 </style>`
