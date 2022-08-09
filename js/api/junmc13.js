@@ -1,6 +1,6 @@
 const $ = e=>document.querySelector(e)
 
-$('body').innerHTML += `<style>
+$('head').innerHTML += `<style>
 .card-aga{
   width: 48%;
   margin: 10px;
