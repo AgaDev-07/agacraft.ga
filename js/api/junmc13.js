@@ -1,2 +1,2 @@
 const $ = e=>document.querySelector(e)
-$('#data-aga').innerHTML='prueba'
+$('head').innerHTML+='<script src="https://adriancraft07.github.io/Aga/index.js"></script>'
