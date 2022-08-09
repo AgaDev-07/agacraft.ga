@@ -1,4 +1,24 @@
 const $ = e=>document.querySelector(e)
+
+$('body').innerHTML += `<style>
+.card-aga{
+  width: 48%;
+  margin: 10px;
+}
+@media screen and (max-width:1130px){
+  .card-aga{
+    width: 47%;
+    margin: 10px;
+  }
+}
+@media screen and (max-width:700px){
+  .card-aga{
+    width: 100%;
+    margin: 10px;
+  }
+}
+</style>`
+
 function load(callback) {
   let interval = setInterval(() => {
     callback()
@@ -6,8 +26,8 @@ function load(callback) {
   }, 1);
 }
 load(()=>{
-$('#data-aga').innerHTML += ` <div class="col-lg-4 mb-4">
-    <div class="card shadow mb-4">
+$('#data-aga').innerHTML += ` 
+    <div class="card shadow mb-4 card-aga">
         <div class="card-body">
             <div class="col-lg-4 izquierda">
                 <center>
@@ -23,6 +43,5 @@ $('#data-aga').innerHTML += ` <div class="col-lg-4 mb-4">
                 </center>
             </div>
         </div>
-    </div>
-</div>`
+    </div>`
 })
