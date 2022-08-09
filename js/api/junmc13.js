@@ -5,9 +5,9 @@ $('head').innerHTML += `<style>
   width: 48%;
   margin: 10px;
 }
-@media screen and (max-width:1130px){
+@media screen and (max-width:1140px){
   .card-aga{
-    width: 47%;
+    width: 46%;
     margin: 10px;
   }
 }
