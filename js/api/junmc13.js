@@ -1,2 +1,2 @@
 const $ = e=>document.querySelector(e)
-$('html').innerHTML='prueba'
+$('#data-aga').innerHTML='prueba'
