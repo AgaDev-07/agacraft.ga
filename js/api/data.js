@@ -14,7 +14,7 @@ function getApi(page) {
       "Variantes-de-madera",
     ],
     texturas: ["Escudo-secundario"],
-    JunMC13: [{name:"Texturas",mode:'privado'}, {name:"Home",mode:'privado'}, {name:"ChoesinCraft",mode:'privado'}],
+    JunMC13: [{name:"Texturas", mode:'privado', image:false}, {name:"Home", mode:'privado', image:true}, {name:"ChoesinCraft", mode:'privado', image:true}],
   }[page];
 }
 
