@@ -1,4 +1,4 @@
-window.$ = e=>document.querySelector(e)
+let $ = e=>document.querySelector(e)
 function loadScript(src){
   return new Promise((res, rej)=>{
     let script = document.createElement('script');
@@ -60,8 +60,8 @@ load(interval=>{
             </div>
         </div>
     </div>`
-   console.log(data == $('#data-aga').innerHTML)
-   if(data == $('#data-aga').innerHTML)interval.stop()
+   console.log(($('#data-aga').innerHTML||'').endsWith(data))
+   if(($('#data-aga').innerHTML||'').endsWith(data))interval.stop()
    else {
      $('#data-aga').innerHTML += data
    }
