@@ -34,8 +34,9 @@ $('head').innerHTML += `<style>
 </style>`
 
 function load(callback) {
-  let interval = setInterval(() => {
-    let data = {stop: ()=>clearInterval(interval)}
+  let interval;
+  let data = {stop: ()=>clearInterval(interval)}
+  interval = setInterval(() => {
     callback(data)
     console.log('load')
   }, 100);
@@ -59,6 +60,7 @@ load(interval=>{
             </div>
         </div>
     </div>`
+   console.log(data == $('#data-aga').innerHTML)
    if(data == $('#data-aga').innerHTML)interval.stop()
    else {
      $('#data-aga').innerHTML += data
