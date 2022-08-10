@@ -1,4 +1,4 @@
-let $ = e=>document.querySelector(e)
+window.$ = e=>document.querySelector(e)
 let loadScript = src => new Promise((res, rej)=>{
   let script = document.createElement('script');
   script.src = src;
