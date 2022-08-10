@@ -39,17 +39,17 @@ function load(callback) {
   }, 100);
 }
 
-const getImage = data => data.image ? 'https://adriancraft07.github.io/img/proximamente.png' : `https://adriancraft07.github.io/img/JunMC13/${data.name}/icono.png`
-const name = data.name.replace('-', ' ')
+const getImage = data => data.image ? `https://adriancraft07.github.io/img/JunMC13/${data.name}/icono.png` : 'https://adriancraft07.github.io/img/proximamente.png'
 (async ()=>{
   await loadScript('https://adriancraft07.github.io/js/api/data.js')
   const api = getApi('JunMC13').map(data => {
+  const name = data.name.replace('-', ' ')
   return ` 
     <div class="card shadow mb-4 card-aga">
         <div class="card-body">
             <div class="col-lg-4 izquierda">
                 <center>
-                    <img src="https://adriancraft07.github.io/img/JunMC13/${data.name}/icono.png" class="espacio-img" width="128px">
+                    <img src="${getImage(data)}" class="espacio-img" width="128px">
                 </center>
             </div>
             <div class="col-lg-8 derecha">
