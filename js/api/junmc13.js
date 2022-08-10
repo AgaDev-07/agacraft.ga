@@ -14,29 +14,6 @@ function loadFile(url){
   file.send();
   return file.responseText;
 }
-
-await loadScript('https://adriancraft07.github.io/js/api/data.js')
-const getImage = data => data.image ? 'https://adriancraft07.github.io/img/proximamente.png' : `https://adriancraft07.github.io/img/JunMC13/${data.name}/icono.png`
-const api = getApi('JunMC13').map(data => {
-  const name = data.name.replace('-', ' ')
-  return ` 
-    <div class="card shadow mb-4 card-aga">
-        <div class="card-body">
-            <div class="col-lg-4 izquierda">
-                <center>
-                    <img src="https://adriancraft07.github.io/img/JunMC13/${data.name}/icono.png" class="espacio-img" width="128px">
-                </center>
-            </div>
-            <div class="col-lg-8 derecha">
-                <center><h6 class="m-0 font-weight-bold text-primary">${name} (CREADO POR AGA)</h6><br>
-                    <p><b>Creador:</b><span class="text-warning2"> AdrianCraft (Aga)</span></p>
-                    <a href="https://adriancraft07.github.io/JunMC13/${name}" target="_blank">
-                        <button class="btn btn-outline-primary btn-block">Descargar ${name}</button>
-                    </a>
-                </center>
-            </div>
-        </div>
-    </div>`})
 $('head').innerHTML += `<style>
 .card-aga{
   width: 48%;
@@ -61,9 +38,34 @@ function load(callback) {
     callback(data)
   }, 100);
 }
-load(interval=>{
+
+const getImage = data => data.image ? 'https://adriancraft07.github.io/img/proximamente.png' : `https://adriancraft07.github.io/img/JunMC13/${data.name}/icono.png`
+const name = data.name.replace('-', ' ')
+(async ()=>{
+  await loadScript('https://adriancraft07.github.io/js/api/data.js')
+  const api = getApi('JunMC13').map(data => {
+  return ` 
+    <div class="card shadow mb-4 card-aga">
+        <div class="card-body">
+            <div class="col-lg-4 izquierda">
+                <center>
+                    <img src="https://adriancraft07.github.io/img/JunMC13/${data.name}/icono.png" class="espacio-img" width="128px">
+                </center>
+            </div>
+            <div class="col-lg-8 derecha">
+                <center><h6 class="m-0 font-weight-bold text-primary">${name} (CREADO POR AGA)</h6><br>
+                    <p><b>Creador:</b><span class="text-warning2"> AdrianCraft (Aga)</span></p>
+                    <a href="https://adriancraft07.github.io/JunMC13/${name}" target="_blank">
+                        <button class="btn btn-outline-primary btn-block">Descargar ${name}</button>
+                    </a>
+                </center>
+            </div>
+        </div>
+    </div>`})
+  load(interval=>{
    if(($('#data-aga').innerHTML||'').endsWith(api))interval.stop()
    else {
      $('#data-aga').innerHTML += api
    }
 })
+})()
