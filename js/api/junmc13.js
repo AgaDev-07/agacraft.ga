@@ -15,7 +15,27 @@ function loadFile(url){
   return file.responseText;
 }
 
-loadScript('https://adriancraft07.github.io/js/api/data.js')
+await loadScript('https://adriancraft07.github.io/js/api/data.js')
+const api = getApi('JunMC13').map(data => {
+  const name = data.name.replace('-', ' ')
+  return ` 
+    <div class="card shadow mb-4 card-aga">
+        <div class="card-body">
+            <div class="col-lg-4 izquierda">
+                <center>
+                    <img src="https://adriancraft07.github.io/img/JunMC13/${data.name}/icono.png" class="espacio-img" width="128px">
+                </center>
+            </div>
+            <div class="col-lg-8 derecha">
+                <center><h6 class="m-0 font-weight-bold text-primary">${name} (CREADO POR AGA)</h6><br>
+                    <p><b>Creador:</b><span class="text-warning2"> AdrianCraft (Aga)</span></p>
+                    <a href="https://adriancraft07.github.io/JunMC13/${name}" target="_blank">
+                        <button class="btn btn-outline-primary btn-block">Descargar ${name}</button>
+                    </a>
+                </center>
+            </div>
+        </div>
+    </div>`})
 $('head').innerHTML += `<style>
 .card-aga{
   width: 48%;
@@ -38,31 +58,11 @@ function load(callback) {
   let data = {stop: ()=>clearInterval(interval)}
   interval = setInterval(() => {
     callback(data)
-    console.log('load')
   }, 100);
 }
 load(interval=>{
-   const data =  ` 
-    <div class="card shadow mb-4 card-aga">
-        <div class="card-body">
-            <div class="col-lg-4 izquierda">
-                <center>
-                    <img src="https://adriancraft07.github.io/img/JunMC13/ChoesinCraft/icono.png" class="espacio-img" width="128px">
-                </center>
-            </div>
-            <div class="col-lg-8 derecha">
-                <center><h6 class="m-0 font-weight-bold text-primary">NOMBRE DEL ADDON (CREADO POR AGA)</h6><br>
-                    <p><b>Creador:</b><span class="text-warning2"> AdrianCraft (Aga)</span></p>
-                    <a href="LINK DE LA PÁGINA DE AGA" target="_blank">
-                        <button class="btn btn-outline-primary btn-block">Descargar NOMBRE DEL ADDON</button>
-                    </a>
-                </center>
-            </div>
-        </div>
-    </div>`
-   console.log(($('#data-aga').innerHTML||'').endsWith(data))
-   if(($('#data-aga').innerHTML||'').endsWith(data))interval.stop()
+   if(($('#data-aga').innerHTML||'').endsWith(api))interval.stop()
    else {
-     $('#data-aga').innerHTML += data
+     $('#data-aga').innerHTML += api
    }
 })
