@@ -9,7 +9,7 @@ function loadScript(src){
   })
 }
 function loadFile(url){
-  const file = XMLHttpRequest();
+  const file = new XMLHttpRequest();
   file.open('GET', url, false);
   file.send();
   return file.responseText;
@@ -35,12 +35,11 @@ $('head').innerHTML += `<style>
 
 function load(callback) {
   let interval = setInterval(() => {
-    callback()
-    clearInterval(interval);
+    callback(interval)
   }, 100);
 }
-load(()=>{
-$('#data-aga').innerHTML += ` 
+load(interval=>{
+   const data =  ` 
     <div class="card shadow mb-4 card-aga">
         <div class="card-body">
             <div class="col-lg-4 izquierda">
@@ -58,4 +57,6 @@ $('#data-aga').innerHTML += `
             </div>
         </div>
     </div>`
+   if(data == $('#data-aga').innerHTML)clearInterval(interval)
+   else $('#data-aga').innerHTML = data
 })
