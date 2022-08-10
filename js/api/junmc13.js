@@ -9,7 +9,7 @@ function loadScript(src){
   })
 }
 function loadFile(url){
-  const file = XMLHTTPRequest();
+  const file = XMLHttpRequest();
   file.open('GET', url, false);
   file.send();
   return file.responseText;
