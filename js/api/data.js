@@ -1,3 +1,24 @@
+
+/**
+ * @param {'addons'|'JunMC13'|'texturas'} page
+ * @returns {String[]}
+ */
+function getApi(page) {
+  return {
+    addons: [
+      "Iron-Chest",
+      "Waila",
+      "Home",
+      "Fundas-de-equipamiento",
+      "Chisel",
+      "Variantes-de-madera",
+    ],
+    texturas: ["Escudo-secundario"],
+    JunMC13: [{name:"Texturas",mode:'privado'}, {name:"Home",mode:'privado'}, {name:"ChoesinCraft",mode:'privado'}],
+  }[page];
+}
+
+
 const nav = `
 <a href="/">Inicio</a>
 <a href="/addons">Addons</a>
