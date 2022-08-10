@@ -36,6 +36,7 @@ $('head').innerHTML += `<style>
 function load(callback) {
   let interval = setInterval(() => {
     callback(interval)
+    console.log('loadd')
   }, 100);
 }
 load(interval=>{
