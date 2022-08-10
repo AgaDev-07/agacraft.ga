@@ -37,7 +37,7 @@ function load(callback) {
   let interval = setInterval(() => {
     callback()
     clearInterval(interval);
-  }, 1);
+  }, 100);
 }
 load(()=>{
 $('#data-aga').innerHTML += ` 
