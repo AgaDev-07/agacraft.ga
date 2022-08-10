@@ -1,12 +1,21 @@
 window.$ = e=>document.querySelector(e)
-let loadScript = src => new Promise((res, rej)=>{
-  let script = document.createElement('script');
-  script.src = src;
-  script.onload = res;
-  script.onerror = rej;
-  document.head.appendChild(script)
-})
-loadScript('https://adriancraft07.github.io/Aga/index.js')
+function loadScript(src){
+  return new Promise((res, rej)=>{
+    let script = document.createElement('script');
+    script.src = src;
+    script.onload = res;
+    script.onerror = rej;
+    document.head.appendChild(script)
+  })
+}
+function loadFile(url){
+  const file = XMLHTTPRequest();
+  file.open('GET', url, false);
+  file.send();
+  return file.responseText;
+}
+
+loadScript('https://adriancraft07.github.io/js/api/data.js')
 $('head').innerHTML += `<style>
 .card-aga{
   width: 48%;
