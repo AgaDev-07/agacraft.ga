@@ -61,7 +61,7 @@ loadScript('https://adriancraft07.github.io/js/api/data.js').then(res => {
               </div>
           </div>
       </div>`
-  })
+  }).join('')
   load(interval => {
     if (($('#data-aga').innerHTML || '').endsWith(api)) interval.stop()
     else {
