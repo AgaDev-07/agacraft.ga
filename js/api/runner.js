@@ -15,24 +15,6 @@ function getDefault() {
   interval = setInterval(fn, 100);
 }
 
-/**
- * @param {'addons'|'seo'|'texturas'} page
- * @returns {String[]}
- */
-function getApi(page) {
-  return {
-    addons: [
-      "Iron-Chest",
-      "Waila",
-      "Home",
-      "Fundas-de-equipamiento",
-      "Chisel",
-      "Variantes-de-madera",
-    ],
-    texturas: ["Escudo-secundario"],
-    JunMC13: [{name:"Texturas",mode:'privado'}, {name:"Home",mode:'privado'}, {name:"ChoesinCraft",mode:'privado'}],
-  }[page];
-}
 function addApiTA(page) {
   let interval;
   let Api = () => {
