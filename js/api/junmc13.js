@@ -52,7 +52,7 @@ loadScript('https://adriancraft07.github.io/js/api/data.js').then(res => {
                   </center>
               </div>
               <div class="col-lg-8 derecha">
-                  <center><h6 class="m-0 font-weight-bold text-primary">${name} (CREADO POR AGA)</h6><br>
+                  <center><h6 class="m-0 font-weight-bold text-primary">${name} (${data.mode})</h6><br>
                       <p><b>Creador:</b><span class="text-warning2"> AdrianCraft (Aga)</span></p>
                       <a href="https://adriancraft07.github.io/JunMC13/${name}" target="_blank">
                           <button class="btn btn-outline-primary btn-block">Descargar ${name}</button>
