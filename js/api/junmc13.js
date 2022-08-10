@@ -16,6 +16,7 @@ function loadFile(url){
 }
 
 await loadScript('https://adriancraft07.github.io/js/api/data.js')
+const getImage = data => data.image ? 'https://adriancraft07.github.io/img/proximamente.png' : `https://adriancraft07.github.io/img/JunMC13/${data.name}/icono.png`
 const api = getApi('JunMC13').map(data => {
   const name = data.name.replace('-', ' ')
   return ` 
