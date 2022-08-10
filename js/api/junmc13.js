@@ -1,6 +1,6 @@
-let $ = e=>document.querySelector(e)
-function loadScript(src){
-  return new Promise((res, rej)=>{
+let $ = e => document.querySelector(e)
+function loadScript(src) {
+  return new Promise((res, rej) => {
     let script = document.createElement('script');
     script.src = src;
     script.onload = res;
@@ -8,7 +8,7 @@ function loadScript(src){
     document.head.appendChild(script)
   })
 }
-function loadFile(url){
+function loadFile(url) {
   const file = new XMLHttpRequest();
   file.open('GET', url, false);
   file.send();
@@ -33,7 +33,7 @@ $('head').innerHTML += `<style>
 
 function load(callback) {
   let interval;
-  let data = {stop: ()=>clearInterval(interval)}
+  let data = { stop: () => clearInterval(interval) }
   interval = setInterval(() => {
     callback(data)
   }, 100);
@@ -43,7 +43,7 @@ const getImage = data => data.image ? `https://adriancraft07.github.io/img/JunMC
 loadScript('https://adriancraft07.github.io/js/api/data.js').then(res => {
   const api = getApi('JunMC13').map(data => {
     const name = data.name.replace('-', ' ')
-    return ` 
+    return `
       <div class="card shadow mb-4 card-aga">
           <div class="card-body">
               <div class="col-lg-4 izquierda">
@@ -62,9 +62,10 @@ loadScript('https://adriancraft07.github.io/js/api/data.js').then(res => {
           </div>
       </div>`
   })
-  load(interval=>{
-   if(($('#data-aga').innerHTML||'').endsWith(api))interval.stop()
-   else {
-     $('#data-aga').innerHTML += api
-   }
+  load(interval => {
+    if (($('#data-aga').innerHTML || '').endsWith(api)) interval.stop()
+    else {
+      $('#data-aga').innerHTML += api
+    }
+  })
 })
