@@ -12,13 +12,25 @@ function pass() {
 }
 function download(page, addon) {
   let user = $("#user").value;
-  let password =$("#pass").value;
-  if (user === "") {
-    $("#no").innerHTML = "Ingrese un usuario";
-  } else if (password === "") {
-    $("#no").innerHTML = "Ingrese una contraseña";
-  } else {
-    window.location.href = `https://aga-db.herokuapp.com/${page}/${addon}?user=${stringToUrl(user)}&password=${stringToUrl(password)}`;
+  let password = $("#pass").value;
+  if (user === "") $("#no").innerHTML = "Ingrese un usuario";
+  else if (password === "") $("#no").innerHTML = "Ingrese una contraseña";
+  else {
+    try {
+      const db = new XMLHttpRequest();
+      db.open("GET", `https://aga-db.herokuapp.com/${page}/${addon}?user=${stringToUrl(user)}&password=${stringToUrl(password)}`);
+      db.send(null);
+      let data = JSON.parse(db.responseText)
+      if (data.VALID) {
+        $('#login').style.display = "none";
+        $('.container').style.display = "block";
+        $('.login-download').href = data.URL
+        $('.login-download').id = 'download'
+        throw new Error('VALID');
+      } else $("#no").innerHTML = 'Usuario o contraseña incorrectos';
+    } catch (error) {
+      console.error(error)
+    }
   }
 }
 function stringToUrl(str) {
