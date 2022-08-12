@@ -39,7 +39,7 @@ function load(callback) {
   }, 100);
 }
 
-const getImage = data => data.image ? `https://adriancraft07.github.io/img/JunMC13/${data.name}/icono.png` : 'https://adriancraft07.github.io/img/proximamente.png'
+const getImage = data => data.image ? `https://adriancraft07.github.io/src/img/JunMC13/${data.name}/icono.png` : 'https://adriancraft07.github.io/src/img/proximamente.png'
 loadScript('https://adriancraft07.github.io/js/api/data.js').then(res => {
   const api = getApi('JunMC13').map(data => {
     const name = data.name.replace('-', ' ')

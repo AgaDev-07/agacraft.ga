@@ -22,10 +22,10 @@ function addApiTA(page) {
     .map(
       ({name, mode}) =>
         `<div class="imagen-port">
-      <img src="${name=='Texturas'? '/img/proximamente.png': `/img/${page}/${name}/icono.png`}" alt="" />
+      <img src="${name=='Texturas'? '/src/img/proximamente.png': `/src/img/${page}/${name}/icono.png`}" alt="" />
       <a href="/${page}/${name}">
         <div class="hover-galeria">
-          <img src="/img/click.png" alt="" />
+          <img src="/src/img/click.png" alt="" />
           <p>${name.replace("-", " ")} (${mode})</p>
         </div>
       </a>
@@ -36,10 +36,10 @@ function addApiTA(page) {
       .map(
         (name) =>
           `<div class="imagen-port">
-        <img src="${`/img/${page}/${name}/icono.png`}" alt="" />
+        <img src="${`/src/img/${page}/${name}/icono.png`}" alt="" />
         <a href="/${page}/${name}">
           <div class="hover-galeria">
-            <img src="/img/click.png" alt="" />
+            <img src="/src/img/click.png" alt="" />
             <p>${name.replace("-", " ")}</p>
           </div>
         </a>
@@ -76,10 +76,10 @@ function addApiIndex() {
               <h2 class="titulo">${title}</h2>
               <div class="galeria-port">
                 <div class="imagen-port">
-                  <img src="${name=='Texturas'? '/img/proximamente.png': `/img/${page}/${name}/icono.png`}" alt="">
+                  <img src="${name=='Texturas'? '/src/img/proximamente.png': `/src/img/${page}/${name}/icono.png`}" alt="">
                   <a href="/${page}/${name}">
                     <div class="hover-galeria">
-                      <img src="/img/click.png" alt="">
+                      <img src="/src/img/click.png" alt="">
                       <p>${name.replace("-", " ")}</p>
                     </div>
                   </a>
