@@ -17,10 +17,12 @@ function pass() {
 }
 (()=>{
   let interval = setInterval(()=>{
-    if(params.access === "false")
+    if(params.access === "false"){
       $("#no").innerText = "Usuario o contraseña incorrectos";
-    clearInterval(interval)
-  },500)
+      if($("#no").innerText == "Usuario o contraseña incorrectos")
+        clearInterval(interval)
+    }
+  }, 500)
 })()
 function download(page, addon) {
   let user = $("#user").value;
