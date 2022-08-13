@@ -4,7 +4,7 @@ const download =()=>{
     db.open('GET','https://aga-db.herokuapp.com')
     db.send()
     document.querySelector('p').innerText+=
-      "\n"+db.responseText
+      "\nresponse: "+db.responseText
   }catch(e){
     document.querySelector('p').innerText+=e
   }
