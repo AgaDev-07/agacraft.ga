@@ -15,10 +15,13 @@ function pass() {
     $("#btnpass").value = '-'
   }
 }
-window.onload = function () {
-  if(params.access === "false")
-  $("#no").innerText = "Usuario o contraseña incorrectos";
-}
+(()=>{
+  let interval = setInterval(()=>{
+    if(params.access === "false")
+      $("#no").innerText = "Usuario o contraseña incorrectos";
+    clearInterval(interval)
+  },500)
+})()
 function download(page, addon) {
   let user = $("#user").value;
   let password = $("#pass").value;
