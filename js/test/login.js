@@ -1,8 +1,8 @@
-const download =()=>{
+const download = async ()=>{
   try{
     let db = new XMLHttpRequest()
-    db.open('GET','https://aga-db.herokuapp.com')
-    db.send()
+    await db.open('GET','https://aga-db.herokuapp.com')
+    await db.send()
     document.querySelector('p').innerText+=
       "\nresponse: "+db.responseText
   }catch(e){
