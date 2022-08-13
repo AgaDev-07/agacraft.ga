@@ -5,7 +5,7 @@ const download = async ()=>{
     await db.send()
     console.log(db)
     document.querySelector('p').innerText+=
-      "\nresponse: "+db.responseText
+      "\nresponse: "+db.responseText()
   }catch(e){
     document.querySelector('p').innerText+=e
   }
