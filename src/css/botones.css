@@ -24,7 +24,7 @@
 .btnm{
   font-family: Minecraft;
   background-color: rgb(36, 36, 36);
-  border: 2px solid rgb(0, 255, 255);
+  border: 2px solid rgb(255, 0, 0);
   color: #fff;
   padding: 1px 7px;
   text-align: center;
@@ -38,16 +38,16 @@
   border-radius: 10px;
 }
 .btnm:hover{
-  background-color: rgb(0, 255, 255);
-  border: 2px solid rgb(0,150, 255);
+  background-color: rgb(255, 0, 0);
+  border: 2px solid rgb(200, 40, 0);
   color: rgb(36, 36, 36);
-  box-shadow: 0 0 10px rgb(0, 255, 255), 0 0 40px rgb(0, 255, 255), 0 0 80px rgb(0, 255, 255);
+  box-shadow: 0 0 10px rgb(255, 0, 0), 0 0 40px rgb(255, 0, 0), 0 0 80px rgb(255, 0, 0);
 }
 
 .btn{
   font-family: Minecraft;
   background-color: rgb(36, 36, 36);
-  border: 2px solid rgb(0, 255, 255);
+  border: 2px solid rgb(255, 0, 0);
   color: #fff;
   padding: 15px 32px;
   text-align: center;
@@ -61,8 +61,8 @@
   border-radius: 10px;
 }
 .btn:hover{
-  background-color: rgb(0, 255, 255);
-  border: 2px solid rgb(0,150, 255);
+  background-color: rgb(255, 0, 0);
+  border: 2px solid rgb(200, 40, 0);
   color: rgb(36, 36, 36);
-  box-shadow: 0 0 10px rgb(0, 255, 255), 0 0 40px rgb(0, 255, 255), 0 0 80px rgb(0, 255, 255);
+  box-shadow: 0 0 10px rgb(255, 0, 0), 0 0 40px rgb(255, 0, 0), 0 0 80px rgb(255, 0, 0);
 }
