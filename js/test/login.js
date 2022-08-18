@@ -1,11 +1,9 @@
 const download = async ()=>{
   try{
-    let db = new XMLHttpRequest()
-    await db.open('GET','https://aga-db.herokuapp.com')
-    await db.send()
+    let db = await fetch('https://aga-db.herokuapp.com')
     console.log(db)
     document.querySelector('p').innerText+=
-      "\nresponse: "+db.responseText()
+      "\nresponse: "+db.status+"\n"
   }catch(e){
     document.querySelector('p').innerText+=e
   }
