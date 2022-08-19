@@ -29,11 +29,7 @@ function download(page, addon) {
   let password = $("#pass").value;
   if (user === "") $("#no").innerText = "Ingrese un usuario";
   else if (password === "") $("#no").innerText = "Ingrese una contraseña";
-  else fetch(`https://aga-db.herokuapp.com${location.pathname}?passsword=${stringToUrl($('#pass').value)}&user=${stringToUrl($('#user').value)}`, { 
-
-      method: "POST",
-
-    }).then(res => res.json()).then(data => {
+  else fetch(`https://aga-db.herokuapp.com${location.pathname}?user=${stringToUrl($('#user').value)}&password=${stringToUrl($('#pass').value)}`).then(res => res.json()).then(data => {
 
       if (data.access) {const $ = e=>document.querySelector(e)
 
