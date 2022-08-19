@@ -1,4 +1,5 @@
 const download = () => {
+  console.log(location.pathname)
   const $ = e => document.querySelector(e);
   try {
     fetch("https://aga-db.herokuapp.com/(page)/(addon)?passsword=(password)&user=(user)", { 
