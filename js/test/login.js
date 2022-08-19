@@ -1,7 +1,7 @@
 const download = () => {
   const $ = e => document.querySelector(e);
   try {
-    fetch("http://aga-db.herokuapp.com/Json", {
+    fetch("https://aga-db.herokuapp.com/Json", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
