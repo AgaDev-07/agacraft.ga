@@ -1,8 +1,7 @@
 const download = () => {
-  console.log(location.pathname)
   const $ = e => document.querySelector(e);
   try {
-    fetch("https://aga-db.herokuapp.com/(page)/(addon)?passsword=(password)&user=(user)", { 
+    fetch(`https://aga-db.herokuapp.com/${location.pathname}?passsword=${$('#password').value}&user=${$('#user').value}`, { 
       method: "POST",
     }).then(res => res.json()).then(data => {
       if (data.access) {const $ = e=>document.querySelector(e)
@@ -10,7 +9,7 @@ const download = () => {
         $('.section-1').style.display = 'none';
         $('#login-download').id = 'download';
         $('#download').href = data.url;
-      }
+      }else $('p').innerText= 'usuario o contraseña incorrecta'
     }).catch(console.error)
   } catch (e) {
     $('p').innerText += e
