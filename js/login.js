@@ -29,8 +29,27 @@ function download(page, addon) {
   let password = $("#pass").value;
   if (user === "") $("#no").innerText = "Ingrese un usuario";
   else if (password === "") $("#no").innerText = "Ingrese una contraseña";
-  else
-    window.location.href = `https://aga-db.herokuapp.com/${page}/${addon}?user=${stringToUrl(user)}&password=${stringToUrl(password)}`;
+  else fetch(`https://aga-db.herokuapp.com${location.pathname}?passsword=${stringToUrl($('#pass').value)}&user=${stringToUrl($('#user').value)}`, { 
+
+      method: "POST",
+
+    }).then(res => res.json()).then(data => {
+
+      if (data.access) {const $ = e=>document.querySelector(e)
+
+        $('.contenedor').style.display = '';
+
+        $('#login').style.display = 'none';
+
+        $('#login-download').id = 'download';
+
+        $('#download').href = data.url;
+
+      }else $('#no').innerText= 'Usuario o contraseña incorrecta'
+
+    }).catch(console.error)
+
+ 
 
 }
 function stringToUrl(str) {
