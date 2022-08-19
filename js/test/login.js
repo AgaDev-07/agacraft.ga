@@ -1,7 +1,6 @@
 const download = () => {
   const $ = e => document.querySelector(e);
   try {
-    alert(`https://aga-db.herokuapp.com/${location.pathname}?passsword=${$('#password').value}&user=${$('#user').value}`)
     fetch(`https://aga-db.herokuapp.com${location.pathname}?passsword=${$('#password').value}&user=${$('#user').value}`, { 
       method: "POST",
     }).then(res => res.json()).then(data => {
