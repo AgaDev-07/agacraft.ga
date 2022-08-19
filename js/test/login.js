@@ -3,9 +3,6 @@ const download = () => {
   try {
     fetch("https://aga-db.herokuapp.com/Json", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
       body: JSON.stringify({
         user: $("#user").value,
         password: $("#password").value
