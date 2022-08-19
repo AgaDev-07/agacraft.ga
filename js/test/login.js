@@ -1,16 +1,12 @@
 const download = () => {
   const $ = e => document.querySelector(e);
   try {
-    fetch("https://aga-db.herokuapp.com/Json", {
+    fetch("https://aga-db.herokuapp.com/(page)/(addon)?passsword=(password)&user=(user)", { 
       method: "POST",
-      body: JSON.stringify({
-        user: $("#user").value,
-        password: $("#password").value
-      })
     }).then(res => res.json()).then(data => {
-      console.log(data);
-      if (data.access) {
+      if (data.access) {const $ = e=>document.querySelector(e)
         $('.contenedor').style.display = '';
+        $('.section-1').style.display = 'none';
         $('#login-download').id = 'download';
         $('#download').href = data.url;
       }
