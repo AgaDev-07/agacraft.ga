@@ -17,7 +17,7 @@ function pass() {
 }
 (()=>{
   let interval = setInterval(()=>{
-    if(loclStorage.length){
+    if(localStorage.length){
         login(localStorage.getItem('password'), localStorage.getItem('user'))
     }
   }, 500)
