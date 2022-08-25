@@ -42,6 +42,7 @@ function load(callback) {
 const getImage = data => data.image ? `https://adriancraft07.github.io/src/img/JunMC13/${data.name}/icono.png` : 'https://adriancraft07.github.io/src/img/proximamente.png'
 loadScript('https://adriancraft07.github.io/js/api/data.js').then(res => {
   const api = getApi('JunMC13').map(data => {
+    if(!publish)return '';
     const name = data.name.replace('-', ' ')
     return `
       <div class="card shadow mb-4 card-aga">
