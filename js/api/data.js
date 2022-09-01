@@ -45,19 +45,6 @@ function getApi() {
       image: true,
     },
   ];
-function getApi(page) {
-  return {
-    addons: [
-      "Iron-Chest",
-      "Waila",
-      "Home",
-      "Fundas-de-equipamiento",
-      "Chisel",
-      "Variantes-de-madera",
-    ],
-    texturas: ["Escudo-secundario"],
-    JunMC13: [{name:"Texturas", mode:'privado', image:false, publish:false}, {name:"Home", mode:'privado', image:true, publish:false}, {name:"ChoesinCraft", mode:'privado', image:true, publish:false}],
-  }[page];
 }
 
 const nav = `
