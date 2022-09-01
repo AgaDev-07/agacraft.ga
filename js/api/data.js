@@ -1,50 +1,8 @@
 /**
- * @returns {{ route: String, name: String, type: String[], private: Boolean, image: Boolean }[]}
+ * @returns {Promise<{ route: String, name: String, type: String[], private: Boolean, image: Boolean }[]>}
  */
 function getApi() {
-  return [
-    {
-      route: 'JunMC13/Texturas',
-      name: 'Texturas',
-      type: ['JunMC13', 'texture'],
-      private: true,
-    },
-    { route: 'addons/Iron-Chest', name: 'Iron Chest', type: ['addon'],
-      image: true, },
-    { route: 'addons/Waila', name: 'Waila', type: ['addon'],
-      image: true, },
-    { route: 'JunMC13/Home', name: 'Home Jun', type: ['JunMC13', 'addon'], private: true,
-      image: true, },
-    { route: 'addons/Home', name: 'Home', type: ['addon'],
-      image: true, },
-    {
-      route: 'texturas/Escudo-secundario',
-      name: 'Escudo secundario',
-      type: ['texture'],
-      image: true,
-    },
-    {
-      route: 'addons/Fundas-de-equipamiento',
-      name: 'Fundas de equipamiento',
-      type: ['addon'],
-      image: true,
-    },
-    { route: 'addons/Chisel', name: 'Chisel', type: ['addon'],
-      image: true, },
-    {
-      route: 'JunMC13/ChoesinCraft',
-      name: 'ChoesinCraft',
-      type: ['JunMC13', 'addon'],
-      private: true,
-      image: true,
-    },
-    {
-      route: 'addons/Variantes-de-madera',
-      name: 'Variantes de madera',
-      type: ['addon'],
-      image: true,
-    },
-  ];
+  return fetch('https://aga-db.herokuapp.com/api').then(v=>v.json())
 }
 
 const nav = `

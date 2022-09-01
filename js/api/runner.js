@@ -16,8 +16,8 @@ function getDefault() {
 }
 function addApi(page) {
   let interval;
-  let Api = () => {
-    let HTML = getApi().filter(v=> page ? v.type.includes(page) : v).map(value =>
+  let Api = async() => {
+    let HTML = (await getApi()).filter(v=> page ? v.type.includes(page) : v).map(value =>
       `<div class="imagen-port">
       <img src="${value.image ? `/src/img/${value.route}/icono.png` : '/src/img/proximamente.png'}" alt="" />
       <a href="/${value.route}">

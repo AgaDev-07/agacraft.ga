@@ -40,19 +40,9 @@ function load(callback) {
 }
 
 const getImage = data => data.image ? `https://adriancraft07.github.io/src/img/JunMC13/${data.name}/icono.png` : 'https://adriancraft07.github.io/src/img/proximamente.png'
-loadScript('https://adriancraft07.github.io/js/api/data.js').then(res => {
-<<<<<<< HEAD
-  const api = getApi().filter(v=>v.type=='JunMC13').map(data => {
-=======
-  const api = getApi('JunMC13').map(data => {
+loadScript('https://adriancraft07.github.io/js/api/data.js').then(async res => {
+  const api = (await getApi()).filter(v=>v.type=='JunMC13').map(data => {
     if(!data.publish)return '';
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 8d4a8d3d24f40729c2e4a058fbee1add31cd170f
-=======
->>>>>>> 8d4a8d3d24f40729c2e4a058fbee1add31cd170f
-=======
->>>>>>> 8d4a8d3d24f40729c2e4a058fbee1add31cd170f
     const name = data.name.replace('-', ' ')
     return `
       <div class="card shadow mb-4 card-aga">
