@@ -1,7 +1,6 @@
 /**
  * @returns {{ route: String, name: String, type: String[], private: Boolean, image: Boolean }[]}
  */
-<<<<<<< HEAD
 function getApi() {
   return [
     {
@@ -46,7 +45,6 @@ function getApi() {
       image: true,
     },
   ];
-=======
 function getApi(page) {
   return {
     addons: [
@@ -60,7 +58,6 @@ function getApi(page) {
     texturas: ["Escudo-secundario"],
     JunMC13: [{name:"Texturas", mode:'privado', image:false, publish:false}, {name:"Home", mode:'privado', image:true, publish:false}, {name:"ChoesinCraft", mode:'privado', image:true, publish:false}],
   }[page];
->>>>>>> 8d4a8d3d24f40729c2e4a058fbee1add31cd170f
 }
 
 const nav = `
