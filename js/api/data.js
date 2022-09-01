@@ -1,8 +1,8 @@
 /**
  * @returns {Promise<{ route: String, name: String, type: String[], private: Boolean, image: Boolean }[]>}
  */
-function getApi() {
-  return fetch('https://aga-db.herokuapp.com/api').then(v=>v.json())
+async function getApi() {
+  return await fetch('https://aga-db.herokuapp.com/api').then(v=>v.json())
 }
 
 const nav = `
