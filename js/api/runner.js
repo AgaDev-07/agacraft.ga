@@ -14,38 +14,22 @@ function getDefault() {
   };
   interval = setInterval(fn, 100);
 }
-
-function addApiTA(page) {
+function addApi(page) {
   let interval;
   let Api = () => {
-    document.querySelector(".galeria-port").innerHTML += page == 'JunMC13' ? getApi(page)
-    .map(
-      ({name, mode}) =>
-        `<div class="imagen-port">
-      <img src="${name=='Texturas'? '/src/img/proximamente.png': `/src/img/${page}/${name}/icono.png`}" alt="" />
-      <a href="/${page}/${name}">
+    let HTML = getApi().filter(v=> page ? v.type.includes(page) : v).map(value =>
+      `<div class="imagen-port">
+      <img src="${value.image ? `/src/img/${value.route}/icono.png` : '/src/img/proximamente.png'}" alt="" />
+      <a href="/${value.route}">
         <div class="hover-galeria">
           <img src="/src/img/click.png" alt="" />
-          <p>${name.replace("-", " ")} (${mode})</p>
+          <p>${value.name} (${value.private ? 'Privado' : 'Publico'})</p>
         </div>
       </a>
     </div>`
-    )
-    .join('')
-     :document.querySelector(".galeria-port").innerHTML += getApi(page)
-      .map(
-        (name) =>
-          `<div class="imagen-port">
-        <img src="${`/src/img/${page}/${name}/icono.png`}" alt="" />
-        <a href="/${page}/${name}">
-          <div class="hover-galeria">
-            <img src="/src/img/click.png" alt="" />
-            <p>${name.replace("-", " ")}</p>
-          </div>
-        </a>
-      </div>`
-      )
-      .join("");
+    ).join("");
+    document.querySelector(".galeria-port").innerHTML += HTML
+    if(HTML)
     Api = () => {
       clearInterval(interval);
       interval = null;
@@ -58,45 +42,3 @@ function addApiTA(page) {
   interval = setInterval(fn, 100);
 }
 
-function addApiIndex() {
-  let interval;
-  let Api = () => {
-    document.querySelector("main").innerHTML += [
-      { title: "Addon mas reciente", page: "addons" },
-      { title: "Textura mas reciente", page: "texturas" },
-      { title: "Contenido mas reciente para JunMC13", page: "JunMC13" },
-    ]
-      .map(({ title, page }, i) => {
-        let name = getApi(page)[0];
-        if(page=='JunMC13')name=name.name
-        let section = 2;
-        if (Math.round(i / 2) * 2 == i) section = 1;
-        return `<section class="section-${section}">
-            <div class="contenedor">
-              <h2 class="titulo">${title}</h2>
-              <div class="galeria-port">
-                <div class="imagen-port">
-                  <img src="${name=='Texturas'? '/src/img/proximamente.png': `/src/img/${page}/${name}/icono.png`}" alt="">
-                  <a href="/${page}/${name}">
-                    <div class="hover-galeria">
-                      <img src="/src/img/click.png" alt="">
-                      <p>${name.replace("-", " ")}</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>`;
-      })
-      .join("");
-    Api = () => {
-      clearInterval(interval);
-      interval = null;
-    };
-  };
-  function fn() {
-    return Api();
-  }
-
-  interval = setInterval(fn, 100);
-}

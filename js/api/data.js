@@ -1,8 +1,52 @@
-
 /**
- * @param {'addons'|'JunMC13'|'texturas'} page
- * @returns {String[]}
+ * @returns {{ route: String, name: String, type: String[], private: Boolean, image: Boolean }[]}
  */
+<<<<<<< HEAD
+function getApi() {
+  return [
+    {
+      route: 'JunMC13/Texturas',
+      name: 'Texturas',
+      type: ['JunMC13', 'texture'],
+      private: true,
+    },
+    { route: 'addons/Iron-Chest', name: 'Iron Chest', type: ['addon'],
+      image: true, },
+    { route: 'addons/Waila', name: 'Waila', type: ['addon'],
+      image: true, },
+    { route: 'JunMC13/Home', name: 'Home Jun', type: ['JunMC13', 'addon'], private: true,
+      image: true, },
+    { route: 'addons/Home', name: 'Home', type: ['addon'],
+      image: true, },
+    {
+      route: 'texturas/Escudo-secundario',
+      name: 'Escudo secundario',
+      type: ['texture'],
+      image: true,
+    },
+    {
+      route: 'addons/Fundas-de-equipamiento',
+      name: 'Fundas de equipamiento',
+      type: ['addon'],
+      image: true,
+    },
+    { route: 'addons/Chisel', name: 'Chisel', type: ['addon'],
+      image: true, },
+    {
+      route: 'JunMC13/ChoesinCraft',
+      name: 'ChoesinCraft',
+      type: ['JunMC13'],
+      private: true,
+      image: true,
+    },
+    {
+      route: 'addons/Variantes-de-madera',
+      name: 'Variantes de madera',
+      type: ['addon'],
+      image: true,
+    },
+  ];
+=======
 function getApi(page) {
   return {
     addons: [
@@ -16,14 +60,14 @@ function getApi(page) {
     texturas: ["Escudo-secundario"],
     JunMC13: [{name:"Texturas", mode:'privado', image:false, publish:false}, {name:"Home", mode:'privado', image:true, publish:false}, {name:"ChoesinCraft", mode:'privado', image:true, publish:false}],
   }[page];
+>>>>>>> 8d4a8d3d24f40729c2e4a058fbee1add31cd170f
 }
-
 
 const nav = `
 <a href="/">Inicio</a>
 <a href="/addons">Addons</a>
 <a href="/texturas">Texturas</a>
-<a href="/JunMC13">JunMC13</a>`
+<a href="/JunMC13">JunMC13</a>`;
 const footer = `
 <div class="contenedor-footer">
   <div class="content-foo">
@@ -45,10 +89,10 @@ const footer = `
     <a class="link-s" target="_blank" href="https://youtube.com/c/Adriancraft07">AdrianCraft</a>
   </div>
 </div>
-<h2 class="titulo-final">&copy; AdrianCraft</h2>`
+<h2 class="titulo-final">&copy; AdrianCraft</h2>`;
 const wave = `
 <div class="wave">
   <svg viewBox="0 0 500 150" preserveAspectRatio="none">
     <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"></path>
   </svg>
-</div>`
+</div>`;
