@@ -34,7 +34,7 @@ function getApi() {
     {
       route: 'JunMC13/ChoesinCraft',
       name: 'ChoesinCraft',
-      type: ['JunMC13'],
+      type: ['JunMC13', 'addon'],
       private: true,
       image: true,
     },
