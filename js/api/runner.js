@@ -28,7 +28,7 @@ function addApi(page) {
       </a>
     </div>`
     ).join("");
-    document.querySelector(".galeria-port").innerHTML += HTML
+    document.querySelector(".galeria-port").innerHTML = HTML
     if(HTML)
     Api = () => {
       clearInterval(interval);
