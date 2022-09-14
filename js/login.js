@@ -1,13 +1,11 @@
 const $ = e => document.querySelector(e);
 const $$ = e => document.querySelectorAll(e);
-window.addEventListener('load', ()=> {
+window.addEventListener('load', ()=> 
   $('button#signout').addEventListener('click',()=>{
     localStorage.clear()
     location.reload()
   })
-  if(localStorage.getItem('user') && localStorage.getItem('password'))
-    $('button#signout').style.display='block'
-})
+)
 
 const params = location.search
   .substring(1)
@@ -51,6 +49,11 @@ function login(user, password) {
     .then(data => {
       clearInterval(window.interval);
       if (data.access) {
+        
+
+  if(localStorage.getItem('user') && localStorage.getItem('password'))
+
+    $('button#signout').style.display='block'
         const $ = e => document.querySelector(e);
         $('.contenedor').style.display = '';
         $('#login').style.display = 'none';
