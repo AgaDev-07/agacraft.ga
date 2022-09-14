@@ -1,8 +1,10 @@
 const $ = e => document.querySelector(e);
 const $$ = e => document.querySelectorAll(e);
 window.addEventListener('load', ()=>
-  $('button#signout').addEventListener('click',()=>localStorage.clear())
-)
+  $('button#signout').addEventListener('click',()=>{
+    localStorage.clear()
+    location.reload()
+}))
 
 const params = location.search
   .substring(1)
