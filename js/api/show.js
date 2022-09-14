@@ -20,6 +20,10 @@ getApi().then(json => {
   if (search.private === 'true') {
     console.log('private');
     json = json.filter(addon => addon.private);
+  }else 
+  if (search.private === 'false') {
+    console.log('not private');
+    json = json.filter(addon => !addon.private);
   }
   if (search.content) {
     window.pathname = `/${type}/${search.content
