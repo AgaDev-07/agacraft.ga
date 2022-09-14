@@ -1,6 +1,9 @@
 const $ = e => document.querySelector(e);
 const $$ = e => document.querySelectorAll(e);
-document.querySelector('button#signout').addEventListener('click',()=>alert('button'))
+document.querySelector('button#signout').addEventListener('click',()=>{
+  alert('button')
+  console.log('button')
+})
 
 const params = location.search
   .substring(1)
