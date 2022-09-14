@@ -1,10 +1,13 @@
 const $ = e => document.querySelector(e);
 const $$ = e => document.querySelectorAll(e);
-window.addEventListener('load', ()=>
+window.addEventListener('load', ()=> {
   $('button#signout').addEventListener('click',()=>{
     localStorage.clear()
     location.reload()
-}))
+  })
+  if(localStorage.getItem('user') && localStorage.getItem('password'))
+    $('button#signout').style.display='block'
+})
 
 const params = location.search
   .substring(1)
