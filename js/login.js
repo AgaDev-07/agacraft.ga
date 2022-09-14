@@ -22,7 +22,7 @@ function pass() {
 }
 (() =>
   window.interval = setInterval(() => {
-    if(params.content) clearInterval(window.interval)
+    if(!params.content) clearInterval(window.interval)
     if (localStorage.length)
       login(localStorage.getItem('user'), localStorage.getItem('password'));
   }, 500))();
