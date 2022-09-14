@@ -1,6 +1,6 @@
 const $ = e => document.querySelector(e);
 const $$ = e => document.querySelectorAll(e);
-document.querySelector('button#signout').addEventListener('click',()=>{
+$('button#signout').addEventListener('click',()=>{
   alert('button')
   console.log('button')
 })
