@@ -4,14 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="Error 404">
-    <title>404|AdrianCraft</title>
+    <title>Addons | AdrianCraft</title>
     <link rel="shortcut icon" href="/src/img/icono.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/src/css/links.css" />
     <link rel="stylesheet" href="/src/css/estilos.css" />
-    <script>window.is404 = true</script>
     <script src="/js/api/data.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>window.type = 'textura'</script>
     <script src="/js/api/show.js"></script>
   </head>
   <body>
@@ -22,8 +21,8 @@
         <a v-for="l in nav" :href="l[0]">{{l[1]}}</a>
       </nav>
       <section class="textos-header">
-        <h1>Error 404</h1>
-        <h2>Pagina no encontrada</h2>
+        <h1>Mejora tu Minecraft</h1>
+        <h2>Con estos texturas</h2>
       </section>
       <div class="wave">
         <svg viewBox="0 0 500 150" preserveAspectRatio="none">
@@ -35,10 +34,23 @@
     </header>
     <main>
       <section class="section-1">
-        <h4 class="titulo">404</h4>
-        <div class="texto-box">
-          <h3 class="texto"> No deberias estar aqui </h3>
-          <h3 class="texto"> Asegurate de que la pagina que buscas exista o que este bien escrita.</h3>
+        <h4 class="titulo">Texturas</h4>
+        <div class="texto-box"></div>
+        <div class="galeria-port"></div>
+        <div class="contenedor">
+          <div class="galeria-port">
+            <div v-for="value in json" class="imagen-port">
+              <img :src="value.icon" alt=""/>
+              <a :href="value.URL">
+                <div class="hover-galeria">
+                  <img src="/src/img/click.png" alt="" />
+                  <p>
+                    {{value.name}} ({{value.private ? 'Privado' : 'Publico'}})
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </main>

@@ -4,34 +4,67 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="Página para descargar los addons de Minecraft Bedrock hechos por AdriánCraft">
+    <meta
+      name="description"
+      content="Página para descargar los addons de Minecraft Bedrock hechos por AdriánCraft"
+    />
     <title>Inicio | AdrianCraft</title>
     <link rel="shortcut icon" href="/src/img/icono.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/src/css/links.css" />
     <link rel="stylesheet" href="/src/css/estilos.css" />
     <script src="/js/api/data.js"></script>
-    <script src="/js/api/runner.js"></script>
-    <script>addApi();</script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="/js/api/show.js"></script>
   </head>
   <body>
     <header>
+      <input type="text" id="search" />
+      <button id="search">Buscar</button>
       <nav>
+        <a v-for="l in nav" :href="l[0]">{{l[1]}}</a>
       </nav>
       <section class="textos-header">
         <h1>Mejora tu Minecraft</h1>
         <h2>Con estos addons y texturas</h2>
       </section>
+      <div class="wave">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+          <path
+            d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+          ></path>
+        </svg>
+      </div>
     </header>
     <main>
       <section class="section-1">
+        <h4 class="titulo">Aga</h4>
         <div class="contenedor">
-          <h4 class="titulo">Aga</h4>
           <div class="galeria-port">
+            <div v-for="value in json" class="imagen-port">
+              <img
+                :src="value.image ? `/src/img/${value.route}/icono.png` : '/src/img/proximamente.png'"
+                alt=""
+              />
+              <a id="login-download" :href="value.URL">
+                <div class="hover-galeria">
+                  <img src="/src/img/click.png" alt="" />
+                  <p>
+                    {{value.name}} ({{value.private ? 'Privado' : 'Publico'}})
+                  </p>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </section>
     </main>
     <footer>
+      <div class="contenedor-footer">
+        <div class="content-foo" v-for="link in footer">
+          <h4>{{link[0]}}</h4>
+          <a class="link-s" target="_blank" :href="link[1]">{{link[2]}}</a>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
