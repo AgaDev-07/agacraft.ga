@@ -6,7 +6,6 @@ async function getApi() {
     .then(v => v.text())
     .then(JSON.parse);
 }
-
 const vue = {
   nav: [
     ['/', 'Inicio'],
