@@ -1,5 +1,12 @@
 const $ = e => document.querySelector(e);
 const $$ = e => document.querySelectorAll(e);
+window.addEventListener('load', ()=> 
+  $('button#signout').addEventListener('click',()=>{
+    localStorage.clear()
+    location.reload()
+  })
+)
+
 const params = location.search
   .substring(1)
   .split('&')
@@ -20,6 +27,7 @@ function pass() {
 }
 (() =>
   window.interval = setInterval(() => {
+    if(!params.content) clearInterval(window.interval)
     if (localStorage.length)
       login(localStorage.getItem('user'), localStorage.getItem('password'));
   }, 500))();
@@ -41,6 +49,11 @@ function login(user, password) {
     .then(data => {
       clearInterval(window.interval);
       if (data.access) {
+        
+
+  if(localStorage.getItem('user') && localStorage.getItem('password'))
+
+    $('button#signout').style.display='block'
         const $ = e => document.querySelector(e);
         $('.contenedor').style.display = '';
         $('#login').style.display = 'none';

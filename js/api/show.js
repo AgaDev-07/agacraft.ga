@@ -4,11 +4,11 @@ getApi().then(json => {
     json = json.filter(addon => addon.type.includes(window.type));
   json = json.map(addon => {
     addon.URL = '';
-    if (addon.type.includes('JunMC13') && window.type !== 'JunMC13')
+    if (addon.type.includes('JunMC13'))
       addon.URL += '/JunMC13';
-    else if (addon.type.includes('textura') && window.type !== 'textura')
+    else if (addon.type.includes('textura'))
       addon.URL += '/texturas';
-    else if (addon.type.includes('addon') && window.type !== 'addon')
+    else if (addon.type.includes('addon'))
       addon.URL += '/addons';
 
     addon.URL += `?content=${addon.name.replaceAll(' ', '-')}`;
@@ -19,6 +19,10 @@ getApi().then(json => {
   let search = getSearch();
   if (search.private === 'true') {
     json = json.filter(addon => addon.private);
+  }else 
+  if (search.private === 'false') {
+    console.log('not private');
+    json = json.filter(addon => !addon.private);
   }
   if (search.private === 'false') {
     json = json.filter(addon => !addon.private);
