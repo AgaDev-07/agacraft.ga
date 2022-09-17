@@ -18,8 +18,10 @@ getApi().then(json => {
 
   let search = getSearch();
   if (search.private === 'true') {
-    console.log('private');
     json = json.filter(addon => addon.private);
+  }
+  if (search.private === 'false') {
+    json = json.filter(addon => !addon.private);
   }
   if (search.content) {
     window.pathname = `/${type}/${search.content
@@ -30,7 +32,6 @@ getApi().then(json => {
         return str[0].toUpperCase() + str.slice(1);
       })
       .join('-')}`;
-    console.log('content');
     let content = json
       .filter(
         addon =>
@@ -53,8 +54,7 @@ getApi().then(json => {
         'section>div.galeria-port'
       ).innerHTML = `<div v-for="image in images" class="imagen-craft"><img :src="image" alt=""></div>`;
 
-      if (type === 'JunMC13') {
-        console.log('a');
+      if (!content.url) {
         $('#login').innerHTML = `
           <label>Usuario</label><input type="text" name="Usuario" id="user"></br>
           <label>Contraseña</label><input type="password" name="Contraseña" id="pass">
@@ -70,7 +70,6 @@ getApi().then(json => {
       json = [content];
     }
   } else if (search.search) {
-    console.log('search');
     json = json.filter(addon =>
       addon.name.toLowerCase().includes(search.search.toLowerCase())
     );
@@ -108,7 +107,7 @@ window.addEventListener('load', () => {
   });
   document.querySelector('input#search').value = getSearch().search || '';
   let e = e => {
-    const search = document.querySelector('input#search').value.toLowerCase();
+    const search = document.querySelector('input#search').value;
     const Search = getSearch();
     Search.search = search;
     if (Search.content !== undefined) delete Search.content;
