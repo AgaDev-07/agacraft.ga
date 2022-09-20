@@ -1,11 +1,11 @@
 const $ = e => document.querySelector(e);
 const $$ = e => document.querySelectorAll(e);
-window.addEventListener('load', ()=> 
-  $('button#signout').addEventListener('click',()=>{
-    localStorage.clear()
-    location.reload()
+window.addEventListener('load', () =>
+  $('button#signout').addEventListener('click', () => {
+    localStorage.clear();
+    location.reload();
   })
-)
+);
 
 const params = location.search
   .substring(1)
@@ -26,11 +26,11 @@ function pass() {
   }
 }
 (() =>
-  window.interval = setInterval(() => {
-    if(!params.content) clearInterval(window.interval)
+  (window.interval = setInterval(() => {
+    if (!params.content) clearInterval(window.interval);
     if (localStorage.length)
       login(localStorage.getItem('user'), localStorage.getItem('password'));
-  }, 500))();
+  }, 500)))();
 function download() {
   let user = $('#user').value;
   let password = $('#pass').value;
@@ -49,11 +49,8 @@ function login(user, password) {
     .then(data => {
       clearInterval(window.interval);
       if (data.access) {
-        
-
-  if(localStorage.getItem('user') && localStorage.getItem('password'))
-
-    $('button#signout').style.display='block'
+        if (localStorage.getItem('user') && localStorage.getItem('password'))
+          $('button#signout').style.display = 'block';
         const $ = e => document.querySelector(e);
         $('.contenedor').style.display = '';
         $('#login').style.display = 'none';
@@ -68,28 +65,68 @@ function login(user, password) {
 function stringToUrl(str) {
   return (str || 'null')
     .replaceAll(' ', '%20')
-    .replaceAll('&', '%26')
-    .replaceAll('?', '%3F')
-    .replaceAll('=', '%3D')
-    .replaceAll('+', '%2B')
-    .replaceAll('#', '%23')
-    .replaceAll('/', '%2F')
-    .replaceAll('\\', '%5C')
-    .replaceAll("'", '%27')
+    .replaceAll('!', '%21')
     .replaceAll('"', '%22')
-    .replaceAll('<', '%3C')
-    .replaceAll('>', '%3E')
+    .replaceAll('#', '%23')
+    .replaceAll('$', '%24')
+
+    .replaceAll('&', '%26')
+    .replaceAll("'", '%27')
     .replaceAll('(', '%28')
     .replaceAll(')', '%29')
-    .replaceAll('[', '%5B')
-    .replaceAll(']', '%5D')
-    .replaceAll('{', '%7B')
-    .replaceAll('}', '%7D')
-    .replaceAll('^', '%5E')
-    .replaceAll('$', '%24')
-    .replaceAll('!', '%21')
     .replaceAll('*', '%2A')
+    .replaceAll('+', '%2B')
+
+    .replaceAll('/', '%2F')
+
+    .replaceAll('<', '%3C')
+    .replaceAll('=', '%3D')
+    .replaceAll('>', '%3E')
+    .replaceAll('?', '%3F')
+
+    .replaceAll('[', '%5B')
+    .replaceAll('\\', '%5C')
+    .replaceAll(']', '%5D')
+    .replaceAll('^', '%5E')
+
+    .replaceAll('`', '%60')
+
+    .replaceAll('{', '%7B')
     .replaceAll('|', '%7C')
+    .replaceAll('}', '%7D')
     .replaceAll('~', '%7E')
-    .replaceAll('`', '%60');
+}
+function urlToString(url) {
+  return (url || 'null')
+    .replaceAll('%20', ' ')
+    .replaceAll('%21', '!')
+    .replaceAll('%22', '"')
+    .replaceAll('%23', '#')
+    .replaceAll('%24', '$')
+
+    .replaceAll('%26', '&')
+    .replaceAll('%27', "'")
+    .replaceAll('%28', '(')
+    .replaceAll('%29', ')')
+    .replaceAll('%2A', '*')
+    .replaceAll('%2B', '+')
+
+    .replaceAll('%2F', '/')
+
+    .replaceAll('%3C', '<')
+    .replaceAll('%3D', '=')
+    .replaceAll('%3E', '>')
+    .replaceAll('%3F', '?')
+
+    .replaceAll('%5B', '[')
+    .replaceAll('%5C', '\\')
+    .replaceAll('%5D', ']')
+    .replaceAll('%5E', '^')
+
+    .replaceAll('%60', '`')
+
+    .replaceAll('%7B', '{')
+    .replaceAll('%7C', '|')
+    .replaceAll('%7D', '}')
+    .replaceAll('%7E', '~');
 }

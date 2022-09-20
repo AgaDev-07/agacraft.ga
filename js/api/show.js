@@ -19,10 +19,6 @@ getApi().then(json => {
   let search = getSearch();
   if (search.private === 'true') {
     json = json.filter(addon => addon.private);
-  }else 
-  if (search.private === 'false') {
-    console.log('not private');
-    json = json.filter(addon => !addon.private);
   }
   if (search.private === 'false') {
     json = json.filter(addon => !addon.private);
@@ -99,8 +95,9 @@ function getSearch() {
       .map(([key, value]) => [key, value.replaceAll('-', ' ')])
   );
 }
+window.__onload__ ||= []
 
-window.addEventListener('load', () => {
+window.__onload__.push(()=>{
   new Vue({
     el: 'nav',
     data: vue,
@@ -127,3 +124,4 @@ window.addEventListener('load', () => {
   );
   document.querySelector('button#search').addEventListener('click', e);
 });
+window.addEventListener("load", ()=>{window.__onload__.forEach(f=>f())});

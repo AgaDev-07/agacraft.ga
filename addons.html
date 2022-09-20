@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="/src/css/estilos.css" />
     <script src="/js/api/data.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script>window.type = 'addon'</script>
+    <script>
+      window.type = 'addon';
+    </script>
     <script src="/js/api/show.js"></script>
   </head>
   <body>
@@ -40,13 +42,11 @@
         <div class="contenedor">
           <div class="galeria-port">
             <div v-for="value in json" class="imagen-port">
-              <img :src="value.icon" alt=""/>
-              <a :href="value.URL">
+              <img :src="value.icon" alt="" />
+              <a id="login-download" :href="value.URL">
                 <div class="hover-galeria">
                   <img src="/src/img/click.png" alt="" />
-                  <p>
-                    {{value.name}} ({{value.url ? 'Publico' : 'Privado' }})
-                  </p>
+                  <p>{{value.name}} ({{value.url ? 'Publico' : 'Privado'}})</p>
                 </div>
               </a>
             </div>
