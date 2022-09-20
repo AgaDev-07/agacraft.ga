@@ -1,6 +1,7 @@
 [
   {
     "name": "Animaciones",
+    "description": "Una textura que agrega animaciones mas realistas al juego",
     "type": ["textura"],
     "add": ["animation"],
     "url": "https://www.mediafire.com/file/3e3d7qr8dbcjr3f/animations.mcpack/file"
