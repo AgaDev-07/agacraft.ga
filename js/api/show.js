@@ -17,6 +17,7 @@ getApi().then(json => {
   });
 
   let search = getSearch();
+  search.search = urlToString(search.search)
   if (search.private === 'true') {
     json = json.filter(addon => addon.private);
   }
