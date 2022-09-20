@@ -1,5 +1,5 @@
 function urlToString(url) {
-  return (url || 'null')
+  return (url || '')
     .replaceAll('%20', ' ')
     .replaceAll('%21', '!')
     .replaceAll('%22', '"')
