@@ -1,5 +1,5 @@
 function urlToString(url) {
-  return (url || '')
+  return url ? url
     .replaceAll('%20', ' ')
     .replaceAll('%21', '!')
     .replaceAll('%22', '"')
@@ -30,7 +30,7 @@ function urlToString(url) {
     .replaceAll('%7B', '{')
     .replaceAll('%7C', '|')
     .replaceAll('%7D', '}')
-    .replaceAll('%7E', '~');
+    .replaceAll('%7E', '~'):url;
 }
 getApi().then(json => {
   json = json.filter(addon => addon !== false)
