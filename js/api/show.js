@@ -33,6 +33,7 @@ function urlToString(url) {
     .replaceAll('%7E', '~'):url;
 }
 getApi().then(json => {
+  window.json = json
   json = json.filter(addon => addon.publish !== false)
   const $ = q => document.querySelector(q);
   if (window.type)
