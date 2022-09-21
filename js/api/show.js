@@ -55,10 +55,10 @@ getApi().then(json => {
   let search = window.buscar = getSearch();
   search.search = urlToString(search.search)
   if (search.private === 'true') {
-    json = json.filter(addon => addon.private);
+    json = json.filter(addon => !addon.url);
   }
   if (search.private === 'false') {
-    json = json.filter(addon => !addon.private);
+    json = json.filter(addon => addon.url);
   }
   if (search.content) {
     window.pathname = `/${type}/${search.content
