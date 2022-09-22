@@ -51,7 +51,6 @@ function login(user, password) {
       if (data.access) {
         if (localStorage.getItem('user') && localStorage.getItem('password'))
           $('button#signout').style.display = 'block';
-        const $ = e => document.querySelector(e);
         $('.contenedor').style.display = '';
         $('#login').style.display = 'none';
         $('#login-download').id = 'download';
