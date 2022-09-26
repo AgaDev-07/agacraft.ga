@@ -48,7 +48,7 @@ loadScript('https://adriancraft07.github.io/js/api/data.js').then(async res => {
     addon.mode = addon.url ? 'Publico' : 'Privado'
     return addon
   }).map(data => {
-    if(!data.publish)return '';
+    if(data.publish === false)return '';
     return `
       <div class="card shadow mb-4 card-aga">
           <div class="card-body">
