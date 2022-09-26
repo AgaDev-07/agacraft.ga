@@ -39,13 +39,13 @@ function load(callback) {
   }, 100);
 }
 
-const getImage = data => data.icon ? data.icon : 'https://adriancraft07.github.io/src/img/proximamente.png'
 loadScript('https://adriancraft07.github.io/js/api/data.js').then(async res => {
   const api = (await getApi()).filter(v=>v.type.includes('JunMC13')).map(addon => {
     addon.URL = '';
 
     addon.URL += `https://adriancraft07.github.io/JunMC13?content=${addon.name.replaceAll(' ', '-')}`;
     addon.icon ||= 'https://adriancraft07.github.io/src/img/proximamente.png';
+    addon.mode = data.url ? 'Publico' : 'Privado'
     return addon
   }).map(data => {
     if(!data.publish)return '';
@@ -54,7 +54,7 @@ loadScript('https://adriancraft07.github.io/js/api/data.js').then(async res => {
           <div class="card-body">
               <div class="col-lg-4 izquierda">
                   <center>
-                      <img src="${getImage(data)}" class="espacio-img" width="128px">
+                      <img src="${data.icon}" class="espacio-img" width="128px">
                   </center>
               </div>
               <div class="col-lg-8 derecha">
