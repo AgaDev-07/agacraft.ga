@@ -33,7 +33,8 @@
     "name": "Home Jun",
     "type": ["JunMC13", "addon"],
     "add":["command", "script"],
-    "icon": "https://adriancraft07.github.io/src/img/JunMC13/Home/icono.png"
+    "icon": "https://adriancraft07.github.io/src/img/JunMC13/Home/icono.png",
+    "url": "https://www.mediafire.com/file/0hnrnbcqpk3gdpz/Home_seo.mcaddon/file"
   },
   {
     "name": "Home",
@@ -102,7 +103,8 @@
     "name": "ChoesinCraft",
     "type": ["JunMC13", "addon"],
     "add":["tools", "table", "mob", "ore", "projectile"],
-    "icon": "https://adriancraft07.github.io/src/img/JunMC13/ChoesinCraft/icono.png"
+    "icon": "https://adriancraft07.github.io/src/img/JunMC13/ChoesinCraft/icono.png",
+    "url": "https://www.mediafire.com/file/du063qv9gtiosxo/ChoesinCraft.mcaddon/file"
   },
   {
     "name": "Variantes de madera",
