@@ -46,6 +46,7 @@ loadScript('https://adriancraft07.github.io/js/api/data.js').then(async res => {
     addon.URL += `https://adriancraft07.github.io/JunMC13?content=${addon.name.replaceAll(' ', '-')}`;
     addon.icon ||= 'https://adriancraft07.github.io/src/img/proximamente.png';
     addon.mode = addon.url ? 'Publico' : 'Privado'
+    addon.description ||= 'Hecho por AdrianCraft'
     return addon
   }).map(data => {
     if(data.publish === false || data['jun-publish'] === false)return '';
@@ -59,6 +60,7 @@ loadScript('https://adriancraft07.github.io/js/api/data.js').then(async res => {
               </div>
               <div class="col-lg-8 derecha">
                   <center><h6 class="m-0 font-weight-bold text-primary">${data.name} (${data.mode})</h6><br>
+                      <p><b>Descripcion:</b><span class="text-warning2"> ${data.description} </span></p>
                       <p><b>Creador:</b><span class="text-warning2"> AdrianCraft (Aga)</span></p>
                       <a href="${data.URL}" target="_blank">
                           <button class="btn btn-outline-primary btn-block">Descargar ${data.name}</button>
