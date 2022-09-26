@@ -8,7 +8,8 @@
   },
   {
     "name": "Texturas",
-    "type": ["JunMC13", "textura"]
+    "type": ["JunMC13", "textura"],
+    "jun-publish": false
   },
   {
     "name": "Iron Chest",
