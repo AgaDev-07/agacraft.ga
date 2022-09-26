@@ -45,7 +45,7 @@ loadScript('https://adriancraft07.github.io/js/api/data.js').then(async res => {
 
     addon.URL += `https://adriancraft07.github.io/JunMC13?content=${addon.name.replaceAll(' ', '-')}`;
     addon.icon ||= 'https://adriancraft07.github.io/src/img/proximamente.png';
-    addon.mode = data.url ? 'Publico' : 'Privado'
+    addon.mode = addon.url ? 'Publico' : 'Privado'
     return addon
   }).map(data => {
     if(!data.publish)return '';
