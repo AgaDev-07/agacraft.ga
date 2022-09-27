@@ -43,7 +43,7 @@ loadScript('https://adriancraft07.github.io/js/api/data.js').then(async res => {
   const api = (await getApi()).filter(v=>v.type.includes('JunMC13')).map(addon => {
     addon.URL = '';
 
-    addon.URL += `https://adriancraft07.github.io/JunMC13?content=${addon.name.replaceAll(' ', '-')}`;
+    addon.URL += `https://agacraft.ga/JunMC13?content=${addon.name.replaceAll(' ', '-')}`;
     addon.icon ||= 'https://adriancraft07.github.io/src/img/proximamente.png';
     addon.mode = addon.url ? 'Publico' : 'Privado'
     addon.description ||= 'Hecho por AdrianCraft'
