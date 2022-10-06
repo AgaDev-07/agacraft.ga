@@ -59,7 +59,7 @@
   {
     "name": "Fundas de equipamiento",
     "type": ["addon"],
-    "description": "Es un addon que cambia los diseños (no los modelos 3D) de escudo, elytas y los tridentes (estos no cambian mucho)\n\n Se recomienda usar la textura #Escudo secundario*/texturas?Escudo-secundario# para que no se volteen los diseños",
+    "description": "Es un addon que cambia los diseños (no los modelos 3D) de escudo, elytas y los tridentes (estos no cambian mucho)\n\n Se recomienda usar la textura #Escudo secundario*/texturas?content=Escudo-secundario# para que no se volteen los diseños",
     "images": [
       "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_aga.png",
       "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_black.png",
