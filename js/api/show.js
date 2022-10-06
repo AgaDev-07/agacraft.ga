@@ -1,59 +1,61 @@
 function urlToString(url) {
-  return url ? url
-    .replaceAll('%20', ' ')
-    .replaceAll('%21', '!')
-    .replaceAll('%22', '"')
-    .replaceAll('%23', '#')
-    .replaceAll('%24', '$')
+  return url
+    ? url
+        .replaceAll('%20', ' ')
+        .replaceAll('%21', '!')
+        .replaceAll('%22', '"')
+        .replaceAll('%23', '#')
+        .replaceAll('%24', '$')
 
-    .replaceAll('%26', '&')
-    .replaceAll('%27', "'")
-    .replaceAll('%28', '(')
-    .replaceAll('%29', ')')
-    .replaceAll('%2A', '*')
-    .replaceAll('%2B', '+')
+        .replaceAll('%26', '&')
+        .replaceAll('%27', "'")
+        .replaceAll('%28', '(')
+        .replaceAll('%29', ')')
+        .replaceAll('%2A', '*')
+        .replaceAll('%2B', '+')
 
-    .replaceAll('%2F', '/')
+        .replaceAll('%2F', '/')
 
-    .replaceAll('%3C', '<')
-    .replaceAll('%3D', '=')
-    .replaceAll('%3E', '>')
-    .replaceAll('%3F', '?')
+        .replaceAll('%3C', '<')
+        .replaceAll('%3D', '=')
+        .replaceAll('%3E', '>')
+        .replaceAll('%3F', '?')
 
-    .replaceAll('%5B', '[')
-    .replaceAll('%5C', '\\')
-    .replaceAll('%5D', ']')
-    .replaceAll('%5E', '^')
+        .replaceAll('%5B', '[')
+        .replaceAll('%5C', '\\')
+        .replaceAll('%5D', ']')
+        .replaceAll('%5E', '^')
 
-    .replaceAll('%60', '`')
+        .replaceAll('%60', '`')
 
-    .replaceAll('%7B', '{')
-    .replaceAll('%7C', '|')
-    .replaceAll('%7D', '}')
-    .replaceAll('%7E', '~'):url;
+        .replaceAll('%7B', '{')
+        .replaceAll('%7C', '|')
+        .replaceAll('%7D', '}')
+        .replaceAll('%7E', '~')
+    : url;
 }
+
+const aTag = /#([^*]+)\*([^#]+)#/g;
+
 getApi().then(json => {
-  window.json = json
-  json = json.filter(addon => addon.publish !== false)
+  window.json = json;
+  json = json.filter(addon => addon.publish !== false);
   const $ = q => document.querySelector(q);
   if (window.type)
     json = json.filter(addon => addon.type.includes(window.type));
   json = json.map(addon => {
     addon.URL = '';
-    if (addon.type.includes('JunMC13'))
-      addon.URL += '/JunMC13';
-    else if (addon.type.includes('textura'))
-      addon.URL += '/texturas';
-    else if (addon.type.includes('addon'))
-      addon.URL += '/addons';
+    if (addon.type.includes('JunMC13')) addon.URL += '/JunMC13';
+    else if (addon.type.includes('textura')) addon.URL += '/texturas';
+    else if (addon.type.includes('addon')) addon.URL += '/addons';
 
     addon.URL += `?content=${addon.name.replaceAll(' ', '-')}`;
     addon.icon ||= '/src/img/proximamente.png';
     return addon;
   });
 
-  let search = window.buscar = getSearch();
-  search.search = urlToString(search.search)
+  let search = (window.buscar = getSearch());
+  search.search = urlToString(search.search);
   if (search.private === 'true') {
     json = json.filter(addon => !addon.url);
   }
@@ -81,6 +83,10 @@ getApi().then(json => {
       })[0];
     if (content) {
       content.description ||= 'Un Addon de AdrianCraft';
+      content.description = content.description.replace(
+        aTag,
+        '<a href="$2">$1</a>'
+      );
       content.images ||= [];
       $('title').innerHTML = `${content.name}(${type}) | AdrianCraft`;
       $('h4.titulo').innerHTML = content.name;
@@ -132,9 +138,9 @@ function getSearch() {
       .map(([key, value]) => [key, value.replaceAll('-', ' ')])
   );
 }
-window.__onload__ ||= []
+window.__onload__ ||= [];
 
-window.__onload__.push(()=>{
+window.__onload__.push(() => {
   new Vue({
     el: 'nav',
     data: vue,
@@ -161,4 +167,6 @@ window.__onload__.push(()=>{
   );
   document.querySelector('button#search').addEventListener('click', e);
 });
-window.addEventListener("load", ()=>{window.__onload__.forEach(f=>f())});
+window.addEventListener('load', () => {
+  window.__onload__.forEach(f => f());
+});
