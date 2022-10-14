@@ -1,5 +1,4 @@
-window.$ = e => document.querySelector(e)
-$('head').innerHTML += `<style>
+document.querySelector('head').innerHTML += `<style>
 .card-aga{
   width: 48%;
   margin: 10px;
@@ -47,5 +46,5 @@ window.onload = async function(){
           </div>
       </div>`
   }).join('');
-  $('#data-aga').innerHTML += api
+  document.querySelector('#data-aga').innerHTML += api
 }
