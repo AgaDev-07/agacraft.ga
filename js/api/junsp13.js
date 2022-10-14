@@ -17,7 +17,7 @@ $('head').innerHTML += `<style>
 </style>`
 
 console.log("Aga-Api connected")
-window.onload = async (){
+window.onload = async function(){
   const api = (await fetch('https://aga-db.herokuapp.com/api?type=JunMC13').then(r=>res.json())).map(addon => {
     addon.URL = '';
 
