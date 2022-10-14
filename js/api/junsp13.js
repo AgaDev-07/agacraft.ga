@@ -1,4 +1,4 @@
-let $ = e => document.querySelector(e)
+window.$ = e => document.querySelector(e)
 $('head').innerHTML += `<style>
 .card-aga{
   width: 48%;
