@@ -1,19 +1,4 @@
 let $ = e => document.querySelector(e)
-function loadScript(src) {
-  return new Promise((res, rej) => {
-    let script = document.createElement('script');
-    script.src = src;
-    script.onload = res;
-    script.onerror = rej;
-    document.head.appendChild(script)
-  })
-}
-function loadFile(url) {
-  const file = new XMLHttpRequest();
-  file.open('GET', url, false);
-  file.send();
-  return file.responseText;
-}
 $('head').innerHTML += `<style>
 .card-aga{
   width: 48%;
@@ -31,15 +16,8 @@ $('head').innerHTML += `<style>
 }
 </style>`
 
-function load(callback) {
-  let interval;
-  let data = { stop: () => clearInterval(interval) }
-  interval = setInterval(() => {
-    callback(data)
-  }, 100);
-}
-
-loadScript('https://adriancraft07.github.io/js/api/data.js').then(async res => {
+console.log("Aga-Api connected")
+window.onload = async (){
   const api = (await fetch('https://aga-db.herokuapp.com/api?type=JunMC13').then(r=>res.json())).map(addon => {
     addon.URL = '';
 
@@ -68,12 +46,6 @@ loadScript('https://adriancraft07.github.io/js/api/data.js').then(async res => {
               </div>
           </div>
       </div>`
-  }).join('')
-  load(interval => {
-    if (($('#data-aga').innerHTML || '').endsWith(api)) interval.stop()
-    else {
-      $('#data-aga').innerHTML += api
-    }
-  })
-})
-console.log("Aga-Api connected")
+  }).join('');
+  $('#data-aga').innerHTML += api
+}
