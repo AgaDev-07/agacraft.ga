@@ -40,7 +40,7 @@ function load(callback) {
 }
 
 loadScript('https://adriancraft07.github.io/js/api/data.js').then(async res => {
-  const api = (await getApi()).filter(v=>v.type.includes('JunMC13')).map(addon => {
+  const api = (await fetch('https://aga-db.herokuapp.com/api?type=JunMC13').then(r=>res.json())).map(addon => {
     addon.URL = '';
 
     addon.URL += `https://agacraft.ga/JunMC13?content=${addon.name.replaceAll(' ', '-')}`;
