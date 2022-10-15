@@ -17,5 +17,6 @@ const vue = {
     ['Discord', 'https://discord.gg/9BqzsNpvpS', 'AgaCraft'],
     ['Correo electronico', 'mailto:agacraft.addons@gmail.com', 'agacraft.addons@gmail.com'],
     ['YouTube', 'https://youtube.com/c/Adriancraft07', 'AdrianCraft'],
+    ['GitHub', 'https://github.com/AdrianCraft07', 'AdrianCraft07'],
   ],
 };
