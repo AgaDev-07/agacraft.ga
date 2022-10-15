@@ -24,9 +24,16 @@ window.onload = async function(){
     addon.icon ||= 'https://adriancraft07.github.io/src/img/proximamente.png';
     addon.mode = addon.url ? 'Publico' : 'Privado'
     return addon
-  }).filter(r=>!(data.publish === false || data['jun-publish'] === false));
-  if(location.pathname==='/' || location.pathname==='/F:/JunSP13/index.html')api.length = 1;
-  document.querySelector('#data-aga').innerHTML += api.map(data => `
+  }).filter(data=>!(data.publish === false || data['jun-publish'] === false));
+  if(location.pathname==='/' || location.pathname==='/F:/JunSP13/index.html')api = [api[0]].map(data=>`<div class="col-lg-4 izquierda">
+									  <center><img src="${data.icon}" class="espacio-img" width="128px"></center>
+									</div><div class="col-lg-8 derecha">
+									  <center><h4 class="text-ee"><b>${data.name} (${data.mode})</b></h4>
+                                      <p><b>Creador:</b><span class="text-warning2"> AdrianCraft (Aga)</span></p>
+                                      <p><b>Descripcion:</b><span class="text-warning2"> ${data.description}</span></p>
+									  <a href="${data.URL}" target="_blank"><button class="btn btn-outline-primary btn-block"><i class="fa fa-eye"></i> Ver ${data.name}</button></a></center>
+								    </div>`)
+  else api = api.map(data => `
       <div class="card shadow mb-4 card-aga">
           <div class="card-body">
               <div class="col-lg-4 izquierda">
@@ -45,6 +52,7 @@ window.onload = async function(){
               </div>
           </div>
       </div>`
-  ).join('');
+  )
+  document.querySelector('#data-aga').innerHTML += api.join('');
   return api;
 }
