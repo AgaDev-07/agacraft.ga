@@ -37,9 +37,9 @@ window.onload = async function(){
               <div class="col-lg-8 derecha">
                   <center><h6 class="m-0 font-weight-bold text-primary">${data.name} (${data.mode})</h6><br>
                       <p><b>Creador:</b><span class="text-warning2"> AdrianCraft (Aga)</span></p>
-                      <p><b>Descripcion:</b><span class="text-warning2">${data.description}</span></p>
+                      <p><b>Descripcion:</b><span class="text-warning2"> ${data.description} </span></p>
                       <a href="${data.URL}" target="_blank">
-                          <button class="btn btn-outline-primary btn-block">Descargar</button>
+                          <button class="btn btn-outline-primary btn-block"><i class="fa fa-eye" aria-hidden="true"></i> ver ${data.name} (${data.mode})</button>
                       </a>
                   </center>
               </div>
