@@ -45,7 +45,7 @@ window.onload = async function(){
               </div>
           </div>
       </div>`
-  });
+  }).filter(r=>r);
   if(location.pathname==='/' || location.pathname==='/F:/JunSP13/index.html')api.length = 1;
   document.querySelector('#data-aga').innerHTML += api.join('');
   return api;
