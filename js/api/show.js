@@ -57,6 +57,7 @@ window.addEventListener('load', async () => {
     apiQuery.push(`content=${search.content}`);
   }
   if(search.version){
+    search.version = search.version.replaceAll(' ', '-');
     apiQuery.push(`version=${search.version}`);
   }
   console.log(apiQuery);
