@@ -24,9 +24,9 @@ window.onload = async function(){
     addon.icon ||= 'https://adriancraft07.github.io/src/img/proximamente.png';
     addon.mode = addon.url ? 'Publico' : 'Privado'
     return addon
-  }).map(data => {
-    if(data.publish === false || data['jun-publish'] === false)return '';
-    return `
+  }).filter(r=>!(data.publish === false || data['jun-publish'] === false));
+  if(location.pathname==='/' || location.pathname==='/F:/JunSP13/index.html')api.length = 1;
+  document.querySelector('#data-aga').innerHTML += api.map(data => `
       <div class="card shadow mb-4 card-aga">
           <div class="card-body">
               <div class="col-lg-4 izquierda">
@@ -45,8 +45,6 @@ window.onload = async function(){
               </div>
           </div>
       </div>`
-  }).filter(r=>r);
-  if(location.pathname==='/' || location.pathname==='/F:/JunSP13/index.html')api.length = 1;
-  document.querySelector('#data-aga').innerHTML += api.join('');
+  ).join('');
   return api;
 }
