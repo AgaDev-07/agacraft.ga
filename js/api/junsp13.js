@@ -17,7 +17,7 @@ document.querySelector('head').innerHTML += `<style>
 
 console.log("Aga-Api connected")
 window.onload = async function(){
-  const api = (await fetch('https://aga-db.herokuapp.com/api?type=JunMC13').then(r=>res.json())).map(addon => {
+  const api = (await fetch('https://aga-db.herokuapp.com/api?type=JunMC13').then(r=>r.json())).map(addon => {
     addon.URL = '';
 
     addon.URL += `https://agacraft.ga/JunMC13?content=${addon.name.replaceAll(' ', '-')}`;
