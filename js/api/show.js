@@ -32,57 +32,47 @@ function urlToString(url) {
         .replaceAll('%7C', '|')
         .replaceAll('%7D', '}')
         .replaceAll('%7E', '~')
-    : url;
+    : '';
 }
 
 const aTag = /#([^*]+)\*([^#]+)#/g;
 
-getApi().then(json => {
-  window.json = json;
-  json = json.filter(addon => addon.publish !== false);
+window.addEventListener('load', async () => {
+  const api = 'https://aga-db.herokuapp.com/api?';
+  const apiQuery = [];
+
+  const search = getSearch();
+  search.search = urlToString(search.search);
+
+  if (globalThis.type) {
+    globalThis.apiQuery.push(`type=${globalThis.type}`);
+  }
+  if (search.content) {
+    apiQuery.push(`content=${search.content}`);
+  }
   const $ = q => document.querySelector(q);
-  if (window.type)
-    json = json.filter(addon => addon.type.includes(window.type));
+  let json = await fetch(api + apiQuery.join('&')).then(res => res.json());
   json = json.map(addon => {
     addon.URL = '';
-    if (addon.type.includes('JunMC13')) addon.URL += '/JunMC13';
+    if (addon.type.includes('JunSP13')) addon.URL += '/JunSP13';
     else if (addon.type.includes('textura')) addon.URL += '/texturas';
     else if (addon.type.includes('addon')) addon.URL += '/addons';
 
     addon.URL += `?content=${addon.name.replaceAll(' ', '-')}`;
-    addon.icon ||= '/src/img/proximamente.png';
     return addon;
   });
-
-  let search = (window.buscar = getSearch());
-  search.search = urlToString(search.search);
-  if (search.private === 'true') {
-    json = json.filter(addon => !addon.url);
-  }
-  if (search.private === 'false') {
-    json = json.filter(addon => addon.url);
-  }
   if (search.content) {
     window.pathname = `/${type}/${search.content
       .replaceAll(' ', '-')
       .replace(/[-]jun/gi, '')
       .split('-')
-      .map(str => {
-        return str[0].toUpperCase() + str.slice(1);
-      })
+      .map(str => str[0].toUpperCase() + str.slice(1))
       .join('-')}`;
-    let content = json
-      .filter(
-        addon =>
-          addon.name.toLowerCase() ===
-          search.content.toLowerCase().replaceAll('-', ' ')
-      )
-      .map(addon => {
-        addon.URL = addon.url;
-        return addon;
-      })[0];
+    let content = json.map(addon => {
+      addon.URL = addon.url;
+      return addon;
+    })[0];
     if (content) {
-      content.description ||= 'Un Addon de AdrianCraft';
       content.description = content.description.replace(
         aTag,
         '<a href="$2">$1</a>'
@@ -112,15 +102,11 @@ getApi().then(json => {
       });
       json = [content];
     }
-  } else if (search.search) {
-    json = json.filter(addon =>
-      addon.name.toLowerCase().includes(search.search.toLowerCase())
-    );
   }
   if (json.length === 0)
     $('.galeria-port').innerHTML = `<h1>No hay ${
       window.type || 'contenido'
-    } que coincida con ${search.search} :(</h1>`;
+    } que coincida con la busqueda :(</h1>`;
 
   new Vue({
     el: 'div.contenedor>div.galeria-port',
@@ -138,9 +124,8 @@ function getSearch() {
       .map(([key, value]) => [key, value.replaceAll('-', ' ')])
   );
 }
-window.__onload__ ||= [];
 
-window.__onload__.push(() => {
+window.addEventListener('load', () => {
   new Vue({
     el: 'nav',
     data: vue,
@@ -166,7 +151,4 @@ window.__onload__.push(() => {
     tecla.keyCode == 13 ? e() : ''
   );
   document.querySelector('button#search').addEventListener('click', e);
-});
-window.addEventListener('load', () => {
-  window.__onload__.forEach(f => f());
-});
+})

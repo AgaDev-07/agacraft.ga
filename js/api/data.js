@@ -11,7 +11,7 @@ const vue = {
     ['/', 'Inicio'],
     ['/addons', 'Addons'],
     ['/texturas', 'Texturas'],
-    ['/JunMC13', 'JunMC13'],
+    ['/JunSP13', 'JunSP13'],
   ],
   footer: [
     ['Discord', 'https://discord.gg/9BqzsNpvpS', 'AgaCraft'],

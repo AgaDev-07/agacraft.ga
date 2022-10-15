@@ -25,12 +25,10 @@ function pass() {
     $('#btnpass').value = '-';
   }
 }
-(() =>
-  (window.interval = setInterval(() => {
-    if (!params.content) clearInterval(window.interval);
-    if (localStorage.length)
-      login(localStorage.getItem('user'), localStorage.getItem('password'));
-  }, 500)))();
+window.addEventListener('load', () => {
+  if (localStorage.length)
+    login(localStorage.getItem('user'), localStorage.getItem('password'));
+});
 function download() {
   let user = $('#user').value;
   let password = $('#pass').value;
@@ -47,7 +45,6 @@ function login(user, password) {
     .then(res => res.text())
     .then(JSON.parse)
     .then(data => {
-      clearInterval(window.interval);
       if (data.access) {
         if (localStorage.getItem('user') && localStorage.getItem('password'))
           $('button#signout').style.display = 'block';
@@ -93,5 +90,5 @@ function stringToUrl(str) {
     .replaceAll('{', '%7B')
     .replaceAll('|', '%7C')
     .replaceAll('}', '%7D')
-    .replaceAll('~', '%7E')
+    .replaceAll('~', '%7E');
 }

@@ -24,7 +24,7 @@
   },
   {
     "name": "Texturas",
-    "type": ["JunMC13", "textura"],
+    "type": ["JunSP13", "textura"],
     "jun-publish": false
   },
   {
@@ -48,10 +48,10 @@
   },
   {
     "name": "Home Jun",
-    "type": ["JunMC13", "addon"],
+    "type": ["JunSP13", "addon"],
     "description": "this is a addon for save your home with command",
     "add":["command", "script"],
-    "icon": "https://adriancraft07.github.io/src/img/JunMC13/Home/icono.png",
+    "icon": "https://adriancraft07.github.io/src/img/JunSP13/Home/icono.png",
     "url": "https://www.mediafire.com/file/0hnrnbcqpk3gdpz/Home_seo.mcaddon/file"
   },
   {
@@ -106,10 +106,10 @@
   },
   {
     "name": "ChoesinCraft",
-    "type": ["JunMC13", "addon"],
+    "type": ["JunSP13", "addon"],
     "description": "this make for a server old",
     "add":["tools", "table", "mob", "ore", "projectile"],
-    "icon": "https://adriancraft07.github.io/src/img/JunMC13/ChoesinCraft/icono.png",
+    "icon": "https://adriancraft07.github.io/src/img/JunSP13/ChoesinCraft/icono.png",
     "url": "https://www.mediafire.com/file/du063qv9gtiosxo/ChoesinCraft.mcaddon/file"
   },
   {
