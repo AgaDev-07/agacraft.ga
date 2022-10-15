@@ -45,7 +45,7 @@ window.addEventListener('load', async () => {
   search.search = urlToString(search.search);
 
   if (globalThis.type) {
-    globalThis.apiQuery.push(`type=${globalThis.type}`);
+    apiQuery.push(`type=${globalThis.type}`);
   }
   if (search.content) {
     apiQuery.push(`content=${search.content}`);
