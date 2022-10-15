@@ -50,6 +50,9 @@ window.addEventListener('load', async () => {
   if (search.content) {
     apiQuery.push(`content=${search.content}`);
   }
+  if(search.version){
+    apiQuery.push(`version=${search.version}`);
+  }
   const $ = q => document.querySelector(q);
   let json = await fetch(api + apiQuery.join('&')).then(res => res.json());
   json = json.map(addon => {
