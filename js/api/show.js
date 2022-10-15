@@ -37,10 +37,10 @@ function urlToString(url) {
 
 const aTag = /#([^*]+)\*([^#]+)#/g;
 function getVersion(addon, version){
-  if(addon['actual-version'])return addon['actual-version']
+  if(version && addon['actual-version'])return addon['actual-version'];
   if(!addon.versions) return '1.0.0';
   if(!addon.versions[version]) return '1.0.0'
-  return version
+  return version;
 }
 
 window.addEventListener('load', async () => {
