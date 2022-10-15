@@ -17,7 +17,7 @@ document.querySelector('head').innerHTML += `<style>
 
 console.log("Aga-Api connected")
 window.onload = async function(){
-  const api = (await fetch('https://aga-db.herokuapp.com/api?type=JunSP13').then(r=>r.json())).map(addon => {
+  let api = (await fetch('https://aga-db.herokuapp.com/api?type=JunSP13').then(r=>r.json())).map(addon => {
     addon.URL = '';
 
     addon.URL += `https://agacraft.ga/JunSP13?content=${addon.name.replaceAll(' ', '-')}`;
@@ -45,6 +45,7 @@ window.onload = async function(){
               </div>
           </div>
       </div>`
-  }).join('');
-  document.querySelector('#data-aga').innerHTML += api
+  });
+  if(location.pathname==='/')api = [api[0]]
+  document.querySelector('#data-aga').innerHTML += api.join('')
 }
