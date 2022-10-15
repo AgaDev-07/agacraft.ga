@@ -36,6 +36,11 @@ function urlToString(url) {
 }
 
 const aTag = /#([^*]+)\*([^#]+)#/g;
+function getVersion(addon, version){
+  if(!addon.versions) return '1.0.0';
+  if(!addon.versions[version]) return '1.0.0'
+  return version
+}
 
 window.addEventListener('load', async () => {
   const api = 'https://aga-db.herokuapp.com/api?';
@@ -82,7 +87,7 @@ window.addEventListener('load', async () => {
       );
       content.images ||= [];
       $('title').innerHTML = `${content.name}(${type}) | AdrianCraft`;
-      $('h4.titulo').innerHTML = content.name;
+      $('h4.titulo').innerHTML = `${content.name} v${getVersion(content, search.version)}`;
       $(
         'div.texto-box'
       ).innerHTML = `<h3 class="texto">${content.description}</h3>`;
