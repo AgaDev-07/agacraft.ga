@@ -46,6 +46,6 @@ window.onload = async function(){
           </div>
       </div>`
   });
-  if(location.pathname==='/')api = [api[0]]
+  if(location.pathname==='/' || location.pathname==='/F:/JunSP13/index.html')api = [api[0]]
   document.querySelector('#data-aga').innerHTML += api.join('')
 }
