@@ -46,6 +46,7 @@ window.onload = async function(){
           </div>
       </div>`
   });
-  if(location.pathname==='/' || location.pathname==='/F:/JunSP13/index.html')api.length = 1
-  document.querySelector('#data-aga').innerHTML += api.join('')
+  if(location.pathname==='/' || location.pathname==='/F:/JunSP13/index.html')api.length = 1;
+  document.querySelector('#data-aga').innerHTML += api.join('');
+  return api;
 }
