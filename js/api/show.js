@@ -38,8 +38,8 @@ function urlToString(url) {
 const aTag = /#([^*]+)\*([^#]+)#/g;
 function getVersion(addon, version){
   if(!version && addon['actual-version'])return addon['actual-version'];
-  if(!addon.versions) return '1.0.0';
-  if(!addon.versions[version]) return '1.0.0'
+  if(!addon.versions) return addon['actual-version']||'1.0.0';
+  if(!addon.versions[version]) return addon['actual-version']||'1.0.0'
   return version;
 }
 
@@ -59,6 +59,7 @@ window.addEventListener('load', async () => {
   if(search.version){
     apiQuery.push(`version=${search.version}`);
   }
+  console.log(apiQuery);
   const $ = q => document.querySelector(q);
   let json = await fetch(api + apiQuery.join('&')).then(res => res.json());
   json = json.map(addon => {
@@ -88,6 +89,7 @@ window.addEventListener('load', async () => {
       );
       content.images ||= [];
       $('title').innerHTML = `${content.name}(${type}) | AdrianCraft`;
+      console.log({content, version:search.version});
       $('h4.titulo').innerHTML = `${content.name} v${getVersion(content, search.version)}`;
       $(
         'div.texto-box'
