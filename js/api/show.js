@@ -138,6 +138,7 @@ function getSearch() {
 }
 
 window.addEventListener('load', () => {
+  console.log('load')
   new Vue({
     el: 'nav',
     data: vue,
@@ -148,6 +149,7 @@ window.addEventListener('load', () => {
   });
   document.querySelector('input#search').value = getSearch().search || '';
   let e = e => {
+    console.log('click')
     const search = document.querySelector('input#search').value;
     const Search = getSearch();
     Search.search = search;
