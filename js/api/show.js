@@ -139,7 +139,7 @@ function getSearch() {
 
 window.addEventListener('load', () => {
   new Vue({
-    el: 'nav',
+    el: 'header',
     data: vue,
   });
   new Vue({
