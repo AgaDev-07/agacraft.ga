@@ -90,15 +90,15 @@ header {
   background-attachment: fixed;
   position: relative;
 }
-header#JunMC13 {
+header#JunSP13 {
   background: url(/src/img/JunMC13/fondo.png);
   background-size: cover;
   background-attachment: fixed;
 }
-header#JunMC13 > nav > a{
+header#JunSP13 > nav > a{
   color:rgb(26, 26, 26);
 }
-header#JunMC13 > section > h1{
+header#JunSP13 > section > h1{
   color:rgb(26, 26, 26);
 }
 nav{
