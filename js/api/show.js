@@ -60,7 +60,6 @@ window.addEventListener('load', async () => {
     search.version = search.version.replaceAll(' ', '-');
     apiQuery.push(`version=${search.version}`);
   }
-  console.log(apiQuery);
   const $ = q => document.querySelector(q);
   let json = await fetch(api + apiQuery.join('&')).then(res => res.json());
   json = json.map(addon => {
@@ -79,6 +78,7 @@ window.addEventListener('load', async () => {
       .split('-')
       .map(str => str[0].toUpperCase() + str.slice(1))
       .join('-')}`;
+    window.onlogin && window.onlogin()
     let content = json.map(addon => {
       addon.URL = addon.url;
       return addon;
