@@ -18,9 +18,11 @@
   </head>
   <body>
     <header>
-      <input type="text" id="search" />
-      <button id="search">Buscar</button>
-        <button id="signout" style="display:none">Cerrar Sesión</button>
+      <nav>
+        <button id="signout" style="display: none;">Cerrar Sesión</button>
+        <input type="text" id="search" />
+        <button id="search">Buscar</button>
+      </nav>
       <nav>
         <a v-for="l in nav" :href="l[0]">{{l[1]}}</a>
       </nav>
