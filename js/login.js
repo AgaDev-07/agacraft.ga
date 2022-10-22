@@ -25,10 +25,10 @@ function pass() {
     $('#btnpass').value = '-';
   }
 }
-window.addEventListener('load', () => {
+window.onlogin = () => {
   if (localStorage.length)
     login(localStorage.getItem('user'), localStorage.getItem('password'));
-});
+};
 function download() {
   let user = $('#user').value;
   let password = $('#pass').value;
