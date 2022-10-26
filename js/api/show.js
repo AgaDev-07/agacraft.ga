@@ -56,6 +56,9 @@ window.addEventListener('load', async () => {
   if (search.content) {
     apiQuery.push(`content=${search.content}`);
   }
+  else if(search.search){
+    apiQuery.push(`search=${search.esarch}`)
+  }
   if(search.version){
     search.version = search.version.replaceAll(' ', '-');
     apiQuery.push(`version=${search.version}`);
