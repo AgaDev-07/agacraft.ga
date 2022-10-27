@@ -140,6 +140,7 @@ function getSearch() {
   );
 }
 
+fetch('https://api.ipify.org/?format=json').then(r=>r.json()).then(console.log)
 window.addEventListener('load', () => {
   new Vue({
     el: 'header',
