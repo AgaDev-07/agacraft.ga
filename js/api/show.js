@@ -1,4 +1,4 @@
-function urlToString(url) {
+﻿function urlToString(url) {
   return url
     ? url
         .replaceAll('%20', ' ')
@@ -59,8 +59,8 @@ window.addEventListener('load', async () => {
     apiQuery.push(`search=${search.search}`)
   }
   if(search.version){
-    search.version = search.version.replaceAll(' ', '-');
     apiQuery.push(`version=${search.version}`);
+    search.version = search.version.replaceAll(' ', '-');
   }
   const $ = q => document.querySelector(q);
   let json = await fetch(api + apiQuery.join('&')).then(res => res.json());
