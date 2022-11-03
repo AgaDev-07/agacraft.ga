@@ -53,14 +53,14 @@ window.addEventListener('load', async () => {
     apiQuery.push(`type=${globalThis.type}`);
   }
   if (search.content) {
-    apiQuery.push(`content=${search.content}`);
+    apiQuery.push(`content=${search.content.replaceAll(' ', '-')}`);
   }
   else if(search.search){
     apiQuery.push(`search=${search.search}`)
   }
   if(search.version){
-    apiQuery.push(`version=${search.version}`);
     search.version = search.version.replaceAll(' ', '-');
+    apiQuery.push(`version=${search.version}`);
   }
   const $ = q => document.querySelector(q);
   let json = await fetch(api + apiQuery.join('&')).then(res => res.json());
