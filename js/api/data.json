@@ -1,17 +1,29 @@
-[
+﻿[
+  {
+    "name": "Iron Chest",
+    "type": ["addon"],
+    "description": "Agrega cofres de Hierro, Oro, Diamante, Cobre y Cristal",
+    "add":["chest"],
+    "icon": "/src/img/addons/Iron-Chest/icono.png",
+    "last-version": "1.0.1",
+    "versions": {
+      "1.0.1": "https://www.mediafire.com/file/octjzqg8u1zfoi5/Iron-Chest-v1.0.1.mcaddon/file",
+      "1.0.0": "https://www.mediafire.com/file/fcq4md6t1n8n0lj/Iron-Chest.mcaddon/file"
+    },
+    "update": ["Se agrego el cofre de netherite", "Se corrigio la textura del cofre de cobre", "Se arreglaron los crafteos de el cofre de oro", "Se agregaron las texturas originales de el Iron-Chest"]
+  },
   {
     "name": "Chisel",
     "type": ["addon"],
     "description": "Es un addon similar al mod de java agregando crafteos y funcionalidades parecidas",
     "images": [
-      "https://adriancraft07.github.io/src/img/addons/Chisel/Chisel.png",
-      "https://adriancraft07.github.io/src/img/addons/Chisel/lavastone.png",
-      "https://adriancraft07.github.io/src/img/addons/Chisel/offsettool.png"
+      "/src/img/addons/Chisel/Chisel.png",
+      "/src/img/addons/Chisel/lavastone.png",
+      "/src/img/addons/Chisel/offsettool.png"
     ],
     "add":["block", "chisel"],
-    "url": "https://www.mediafire.com/file/aa9lvf2vmam6rww/Aga-Chisel-v1.0.2.mcaddon/file",
-    "icon": "https://adriancraft07.github.io/src/img/addons/Chisel/icono.png",
-    "actual-version": "1.0.2",
+    "icon": "/src/img/addons/Chisel/icono.png",
+    "last-version": "1.0.2",
     "versions": {
       "1.0.2": "https://www.mediafire.com/file/aa9lvf2vmam6rww/Aga-Chisel-v1.0.2.mcaddon/file",
       "1.0.1": "https://www.mediafire.com/file/7dvbpv3336dyfu5/Aga_Chisel_v1.0.1.mcaddon/file",
@@ -32,30 +44,25 @@
     "jun-publish": false
   },
   {
-    "name": "Iron Chest",
-    "type": ["addon"],
-    "description": "Agrega cofres de Hierro, Oro, Diamante, Cobre y Cristal",
-    "add":["chest"],
-    "url": "https://www.mediafire.com/file/fcq4md6t1n8n0lj/Iron-Chest.mcaddon/file",
-    "icon": "https://adriancraft07.github.io/src/img/addons/Iron-Chest/icono.png"
-  },
-  {
     "name": "Waila",
     "type": ["addon"],
     "description": "Te muestra lo que estas viendo ya sea una entidad o un bloque sea vanilla o de otro addon ademas de ser configurable con el Waila config",
     "images": [
-      "https://adriancraft07.github.io/src/img/addons/Waila/config.png"
+      "/src/img/addons/Waila/config.png"
     ],
     "add": ["script"],
     "url": "https://www.mediafire.com/file/s3c7q2cpa67w5ht/Waila.mcaddon/file",
-    "icon": "https://adriancraft07.github.io/src/img/addons/Waila/icono.png"
+    "icon": "/src/img/addons/Waila/icono.png",
+    "versions": {
+      "1.0.0": "https://www.mediafire.com/file/s3c7q2cpa67w5ht/Waila.mcaddon/file"
+    }
   },
   {
     "name": "Home Jun",
     "type": ["JunSP13", "addon"],
     "description": "this is a addon for save your home with command",
     "add":["command", "script"],
-    "icon": "https://adriancraft07.github.io/src/img/JunSP13/Home/icono.png",
+    "icon": "/src/img/JunSP13/Home/icono.png",
     "url": "https://www.mediafire.com/file/0hnrnbcqpk3gdpz/Home_seo.mcaddon/file"
   },
   {
@@ -64,72 +71,72 @@
     "description": "Agrega el comando \\home con los argumentos set, go, remove y list cada uno con sus debidas funciones el texto que se ponga a continuacion de los siguientes comandos se utilizaran como nombre del home ejemplos:\n\n \\home set casa\n \\home go casa\n \\home remove casa\n \\home list",
     "add":["command", "script"],
     "url": "https://www.mediafire.com/file/85ty3n447vcr163/Home.mcaddon/file",
-    "icon": "https://adriancraft07.github.io/src/img/addons/Home/icono.png"
+    "icon": "/src/img/addons/Home/icono.png"
   },
   {
     "name": "Escudo secundario",
     "type": ["textura"],
     "description": "Es una textura que lo que hace es voltear el escudo de manera que no quede la imagen de cabeza como en el Minecraft vanilla aqui un ejemplo:",
     "images": [
-      "https://adriancraft07.github.io/src/img/texturas/Escudo-secundario/comparacion.png"
+      "/src/img/texturas/Escudo-secundario/comparacion.png"
     ],
     "add":["fix", "animation"],
     "url": "https://www.mediafire.com/file/ap37rj07w05lxew/Escudo_secundario.mcpack/file",
-    "icon": "https://adriancraft07.github.io/src/img/texturas/Escudo-secundario/icono.png"
+    "icon": "/src/img/texturas/Escudo-secundario/icono.png"
   },
   {
     "name": "Fundas de equipamiento",
     "type": ["addon"],
     "description": "Es un addon que cambia los diseños (no los modelos 3D) de escudo, elytas y los tridentes (estos no cambian mucho)\n\n Se recomienda usar la textura #Escudo secundario*/texturas?content=Escudo-secundario# para que no se volteen los diseños",
     "images": [
-      "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_aga.png",
-      "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_black.png",
-      "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_blue.png",
-      "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_brown.png",
-      "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_cyan.png",
-      "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_gag.png",
-      "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_gray.png",
-      "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_green.png",
-      "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_koopa.png",
-      "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_light_blue.png",
-      "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_lime.png",
-      "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_magenta.png",
-      "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_orange.png",
-      "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_pink.png",
-      "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_purple.png",
-      "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_red.png",
-      "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_seo.png",
-      "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_silver.png",
-      "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_stk.png",
-      "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_white.png",
-      "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/elytra_yellow.png"
+      "/src/img/addons/Fundas-de-equipamiento/elytra_aga.png",
+      "/src/img/addons/Fundas-de-equipamiento/elytra_black.png",
+      "/src/img/addons/Fundas-de-equipamiento/elytra_blue.png",
+      "/src/img/addons/Fundas-de-equipamiento/elytra_brown.png",
+      "/src/img/addons/Fundas-de-equipamiento/elytra_cyan.png",
+      "/src/img/addons/Fundas-de-equipamiento/elytra_gag.png",
+      "/src/img/addons/Fundas-de-equipamiento/elytra_gray.png",
+      "/src/img/addons/Fundas-de-equipamiento/elytra_green.png",
+      "/src/img/addons/Fundas-de-equipamiento/elytra_koopa.png",
+      "/src/img/addons/Fundas-de-equipamiento/elytra_light_blue.png",
+      "/src/img/addons/Fundas-de-equipamiento/elytra_lime.png",
+      "/src/img/addons/Fundas-de-equipamiento/elytra_magenta.png",
+      "/src/img/addons/Fundas-de-equipamiento/elytra_orange.png",
+      "/src/img/addons/Fundas-de-equipamiento/elytra_pink.png",
+      "/src/img/addons/Fundas-de-equipamiento/elytra_purple.png",
+      "/src/img/addons/Fundas-de-equipamiento/elytra_red.png",
+      "/src/img/addons/Fundas-de-equipamiento/elytra_seo.png",
+      "/src/img/addons/Fundas-de-equipamiento/elytra_silver.png",
+      "/src/img/addons/Fundas-de-equipamiento/elytra_stk.png",
+      "/src/img/addons/Fundas-de-equipamiento/elytra_white.png",
+      "/src/img/addons/Fundas-de-equipamiento/elytra_yellow.png"
     ],
     "add":["colors"],
     "url": "https://www.mediafire.com/file/wv8p3259uxkt7ry/Fundas-de-equipamento.mcaddon/file",
-    "icon": "https://adriancraft07.github.io/src/img/addons/Fundas-de-equipamiento/icono.png"
+    "icon": "/src/img/addons/Fundas-de-equipamiento/icono.png"
   },
   {
     "name": "ChoesinCraft",
     "type": ["JunSP13", "addon"],
     "description": "this make for a server old",
     "add":["tools", "table", "mob", "ore", "projectile"],
-    "icon": "https://adriancraft07.github.io/src/img/JunSP13/ChoesinCraft/icono.png",
+    "icon": "/src/img/JunSP13/ChoesinCraft/icono.png",
     "url": "https://www.mediafire.com/file/du063qv9gtiosxo/ChoesinCraft.mcaddon/file"
   },
   {
     "name": "Variantes de madera",
     "type": ["addon"],
     "images": [
-      "https://adriancraft07.github.io/src/img/addons/Variantes-de-madera/mesa-de-tallado.gif",
-      "https://adriancraft07.github.io/src/img/addons/Variantes-de-madera/Palos.gif",
-      "https://adriancraft07.github.io/src/img/addons/Variantes-de-madera/soporte-de-armadura.gif",
-      "https://adriancraft07.github.io/src/img/addons/Variantes-de-madera/mesa-de-crafteo.png",
-      "https://adriancraft07.github.io/src/img/addons/Variantes-de-madera/Cofres.png",
-      "https://adriancraft07.github.io/src/img/addons/Variantes-de-madera/Librerias.png"
+      "/src/img/addons/Variantes-de-madera/mesa-de-tallado.gif",
+      "/src/img/addons/Variantes-de-madera/Palos.gif",
+      "/src/img/addons/Variantes-de-madera/soporte-de-armadura.gif",
+      "/src/img/addons/Variantes-de-madera/mesa-de-crafteo.png",
+      "/src/img/addons/Variantes-de-madera/Cofres.png",
+      "/src/img/addons/Variantes-de-madera/Librerias.png"
     ],
     "add":["table", "chest", "block", "tools"],
     "description": "Agrega variaciones de bloques e items de cada tipo de madera los cuales para craftear se nesita una mesa especial (mesa de tallado) a continuacion los crafteos de los objetos",
     "url": "https://www.mediafire.com/file/33w1ylafln149fh/Variantes_de_maderas.mcaddon/file",
-    "icon": "https://adriancraft07.github.io/src/img/addons/Variantes-de-madera/icono.png"
+    "icon": "/src/img/addons/Variantes-de-madera/icono.png"
   }
 ]

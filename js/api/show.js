@@ -37,9 +37,8 @@ function urlToString(url) {
 
 const aTag = /#([^*]+)\*([^#]+)#/g;
 function getVersion(addon, version){
-  if(!version && addon['actual-version'])return addon['actual-version'];
-  if(!addon.versions) return addon['actual-version']||'1.0.0';
-  if(!addon.versions[version]) return addon['actual-version']||'1.0.0'
+  if(!version && addon['last-version'])return addon['last-version'];
+  if(!addon.versions || !addon.versions[version]) return addon['last-version']||'1.0.0'
   return version;
 }
 
