@@ -43,7 +43,7 @@ function getVersion(addon, version){
 }
 
 window.addEventListener('load', async () => {
-  const api = 'https://aga-db.herokuapp.com/api?';
+  const api = 'http://agaapi.webredirect.org:3000/api?';
   const apiQuery = [];
 
   const search = getSearch();
