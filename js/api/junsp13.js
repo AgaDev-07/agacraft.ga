@@ -19,7 +19,7 @@ console.log('Aga-Api connected');
 const domain = 'https://agacraft.ga'
 window.onload = async function () {
   let api = (
-    await fetch('https://aga-db.herokuapp.com/api?type=JunSP13').then(r =>
+    await fetch('http://agaapi.webredirect.org:3000/api?type=JunSP13').then(r =>
       r.json()
     )
   )
