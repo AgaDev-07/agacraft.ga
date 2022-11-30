@@ -1,4 +1,4 @@
-﻿function urlToString(url) {
+function urlToString(url) {
   return url
     ? url
         .replaceAll('%20', ' ')
