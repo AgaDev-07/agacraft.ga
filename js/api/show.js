@@ -42,28 +42,38 @@ function getVersion(addon, version){
   return version;
 }
 
+function loadScript(url){
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = url;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+}
+
 window.addEventListener('load', async () => {
-  const api = 'http://agaapi.webredirect.org:3000/api?';
-  const apiQuery = [];
+  const domain = 'https://agacraft.ga';
+  await loadScript(`${domain}/js/api/agaapi.js`);
+  const apiQuery = {};
 
   const search = getSearch();
   search.search = urlToString(search.search);
 
   if (globalThis.type) {
-    apiQuery.push(`type=${globalThis.type}`);
+    apiQuery.type = globalThis.type
   }
   if (search.content) {
-    apiQuery.push(`content=${search.content.replaceAll(' ', '-')}`);
+    apiQuery.content = search.content.replaceAll(' ', '-');
   }
   else if(search.search){
-    apiQuery.push(`search=${search.search}`)
+    apiQuery.search = search.search;
   }
   if(search.version){
-    search.version = search.version.replaceAll(' ', '-');
-    apiQuery.push(`version=${search.version}`);
+    search.version = search.version;
   }
   const $ = q => document.querySelector(q);
-  let json = await fetch(api + apiQuery.join('&')).then(res => res.json());
+  let json = await agaApi(apiQuery).then(res => res.json());
   json = json.map(addon => {
     addon.URL = '';
     if (addon.type.includes('JunSP13')) addon.URL += '/JunSP13';
@@ -139,7 +149,7 @@ function getSearch() {
   );
 }
 
-fetch('https://api.ipify.org/?format=json').then(r=>r.json()).then(console.log)
+fetch('https://api.ipify.org/?format=json').then(r=>r.json())
 window.addEventListener('load', () => {
   new Vue({
     el: 'header',

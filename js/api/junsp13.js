@@ -15,14 +15,21 @@ document.querySelector('head').innerHTML += `<style>
 }
 </style>`;
 
-console.log('Aga-Api connected');
-const domain = 'https://agacraft.ga'
+const domain = 'https://agacraft.ga';
+
+function loadScript(url){
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = url;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+}
+
 window.onload = async function () {
-  let api = (
-    await fetch('http://agaapi.webredirect.org:3000/api?type=JunSP13').then(r =>
-      r.json()
-    )
-  )
+  await loadScript(`${domain}/js/api/agaapi.js`);
+  let api = (await agaApi({type:'JunSP13'}))
     .filter(data => !(data.publish === false || data['jun-publish'] === false))
     .map(addon => {
       addon.URL = '';
