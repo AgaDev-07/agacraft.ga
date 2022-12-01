@@ -18,7 +18,7 @@ async function loadApi(query) {
     const data = await request(
       'https://raw.githubusercontent.com/AdrianCraft07/AdrianCraft07.github.io/main/js/api/data.json'
     );
-    let text = data.text().trim();
+    let text = (await data.text()).trim();
     let json = JSON.parse(text);
     json = json.filter(addon => addon.publish !== false);
     if (index) json = json.filter((_, i) => i == index);
