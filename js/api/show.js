@@ -73,7 +73,7 @@ window.addEventListener('load', async () => {
     search.version = search.version;
   }
   const $ = q => document.querySelector(q);
-  let json = await agaApi(apiQuery).then(res => res.json());
+  let json = await loadApi(apiQuery).then(res => res.json());
   json = json.map(addon => {
     addon.URL = '';
     if (addon.type.includes('JunSP13')) addon.URL += '/JunSP13';

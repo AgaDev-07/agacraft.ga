@@ -29,7 +29,7 @@ function loadScript(url){
 
 window.onload = async function () {
   await loadScript(`${domain}/js/api/agaapi.js`);
-  let api = (await agaApi({type:'JunSP13'}))
+  let api = (await loadApi({type:'JunSP13'}))
     .filter(data => !(data.publish === false || data['jun-publish'] === false))
     .map(addon => {
       addon.URL = '';
