@@ -38,7 +38,7 @@ function download() {
 }
 function login(user, password) {
   fetch(
-    `https://aga-db.herokuapp.com${window.pathname}?user=${stringToUrl(
+    `https://agaapi.webredirect.org:3000${window.pathname}?user=${stringToUrl(
       user
     )}&password=${stringToUrl(password)}`
   )
