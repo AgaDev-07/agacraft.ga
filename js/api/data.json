@@ -1,5 +1,20 @@
 ﻿[
   {
+    "name": "Waila",
+    "type": ["addon"],
+    "description": "Te muestra lo que estas viendo ya sea una entidad o un bloque sea vanilla o de otro addon ademas de ser configurable con el Waila config",
+    "images": [
+      "/src/img/addons/Waila/config.png"
+    ],
+    "add": ["script"],
+    "url": "https://www.mediafire.com/file/s3c7q2cpa67w5ht/Waila.mcaddon/file",
+    "icon": "/src/img/addons/Waila/icono.png",
+    "versions": {
+      "1.0.0": "https://www.mediafire.com/file/s3c7q2cpa67w5ht/Waila.mcaddon/file",
+      "2.0.0-beta": "https://www.mediafire.com/file/yr3nhjc6ewwl0xs/Waila.mcaddon/file"
+    }
+  },
+  {
     "name": "Iron Chest",
     "type": ["addon"],
     "description": "Agrega cofres de Hierro, Oro, Diamante, Cobre y Cristal",
@@ -42,20 +57,6 @@
     "name": "Texturas",
     "type": ["JunSP13", "textura"],
     "jun-publish": false
-  },
-  {
-    "name": "Waila",
-    "type": ["addon"],
-    "description": "Te muestra lo que estas viendo ya sea una entidad o un bloque sea vanilla o de otro addon ademas de ser configurable con el Waila config",
-    "images": [
-      "/src/img/addons/Waila/config.png"
-    ],
-    "add": ["script"],
-    "url": "https://www.mediafire.com/file/s3c7q2cpa67w5ht/Waila.mcaddon/file",
-    "icon": "/src/img/addons/Waila/icono.png",
-    "versions": {
-      "1.0.0": "https://www.mediafire.com/file/s3c7q2cpa67w5ht/Waila.mcaddon/file"
-    }
   },
   {
     "name": "Home Jun",
