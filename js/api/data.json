@@ -9,7 +9,7 @@
     "add": ["script"],
     "url": "https://www.mediafire.com/file/s3c7q2cpa67w5ht/Waila.mcaddon/file",
     "icon": "/src/img/addons/Waila/icono.png",
-    "last-version": "1.0.0",
+    "last-version": "2.0.0-beta",
     "versions": {
       "1.0.0": "https://www.mediafire.com/file/s3c7q2cpa67w5ht/Waila.mcaddon/file",
       "2.0.0-beta": "https://www.mediafire.com/file/yr3nhjc6ewwl0xs/Waila.mcaddon/file"
