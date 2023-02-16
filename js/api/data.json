@@ -8,12 +8,13 @@
     ],
     "add": ["script"],
     "icon": "/src/img/addons/Waila/icono.png",
-    "update": ["Se arreglo el problema de scrpts descontrolados", "La vida se representa con corazones", "Los items tirados en el suelo se detecta su tipo de item"],
-    "last-version": "2.0.1",
+    "update": ["Se actualizo a la api de Minecraft 1.19.60"],
+    "last-version": "3.0.0",
     "versions": {
       "1.0.0": "https://www.mediafire.com/file/s3c7q2cpa67w5ht/Waila.mcaddon/file",
       "2.0.0": "https://www.mediafire.com/file/29pk7dgsazyg27s/Waila-2.0.0.mcaddon/file",
-      "2.0.1": "https://www.mediafire.com/file/qx868qji5h0g78l/Waila-2.0.1.mcaddon/file"
+      "2.0.1": "https://www.mediafire.com/file/qx868qji5h0g78l/Waila-2.0.1.mcaddon/file",
+      "3.0.0": "https://www.mediafire.com/file/kodxdkz3t3i65rt/Waila-3.0.0.mcaddon/file"
     }
   },
   {
