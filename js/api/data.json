@@ -1,5 +1,18 @@
 [
   {
+    "name": "Home",
+    "type": ["addon"],
+    "description": "Agrega el comando \\home con los argumentos set, go, remove y list cada uno con sus debidas funciones el texto que se ponga a continuacion de los siguientes comandos se utilizaran como nombre del home ejemplos:\n\n \\home set casa\n \\home go casa\n \\home remove casa\n \\home list",
+    "add":["command", "script"],
+    "icon": "/src/img/addons/Home/icono.png",
+    "update": ["Se actualizo a la api mas reciente de Minecraft"],
+    "last-version": "2.0.0",
+    "versions": {
+      "1.0.0": "https://www.mediafire.com/file/85ty3n447vcr163/Home.mcaddon/file",
+      "2.0.0": "https://www.mediafire.com/file/umhdtj9voxhzy2c/Homes_v2.0.0.mcaddon/file"
+    }
+  },
+  {
     "name": "Waila",
     "type": ["addon"],
     "description": "Te muestra lo que estas viendo ya sea una entidad o un bloque sea vanilla o de otro addon ademas de ser configurable con el Waila config",
@@ -68,14 +81,6 @@
     "add":["command", "script"],
     "icon": "/src/img/JunSP13/Home/icono.png",
     "url": "https://www.mediafire.com/file/0hnrnbcqpk3gdpz/Home_seo.mcaddon/file"
-  },
-  {
-    "name": "Home",
-    "type": ["addon"],
-    "description": "Agrega el comando \\home con los argumentos set, go, remove y list cada uno con sus debidas funciones el texto que se ponga a continuacion de los siguientes comandos se utilizaran como nombre del home ejemplos:\n\n \\home set casa\n \\home go casa\n \\home remove casa\n \\home list",
-    "add":["command", "script"],
-    "url": "https://www.mediafire.com/file/85ty3n447vcr163/Home.mcaddon/file",
-    "icon": "/src/img/addons/Home/icono.png"
   },
   {
     "name": "Escudo secundario",
