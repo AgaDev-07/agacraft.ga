@@ -18,7 +18,7 @@ async function loadApi(query) {
   */
   let { type, content, search, version, index, format } = query;
   const data = await request(
-    'https://raw.githubusercontent.com/AdrianCraft07/AdrianCraft07.github.io/main/js/api/data.json'
+    'https://raw.githubusercontent.com/AdrianCraft07/agacraft.ga/main/js/api/data.json'
   );
   let text = (await data.text()).trim();
   let json = JSON.parse(text);
