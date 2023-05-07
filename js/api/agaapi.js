@@ -47,7 +47,7 @@ async function loadApi(query) {
   }
   json.forEach(addon => {
     addon.description ||= 'Un Addon de AdrianCraft';
-    addon.icon ||= 'https://adriancraft07.github.io/src/img/proximamente.png';
+    addon.icon ||= 'https://agacraft.ga/src/img/proximamente.png';
     if (addon.versions && addon.versions[addon['last-version']])
       addon.url = addon.versions[addon['last-version']];
   });
