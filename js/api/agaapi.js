@@ -8,14 +8,6 @@ function request(url) {
 
 const apiDomain = 'agaapi.webredirect.org:3000';
 async function loadApi(query) {
-  /*
-    return await fetch(
-      `https://${apiDomain}/api?${Object.entries(query)
-        .map(([key, value]) => `${key}=${value}`)
-        .join('&')}`
-    ).then(r => r.json());
-  /*
-  */
   let { type, content, search, version, index, format } = query;
   const data = await request(
     'https://raw.githubusercontent.com/AdrianCraft07/agacraft.ga/main/js/api/data.json'
