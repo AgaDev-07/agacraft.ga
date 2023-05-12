@@ -107,12 +107,6 @@ function load_data(){
   })
 }
 
-
-$(document).on('keydown',function(key){
-  if(key.keyCode == 13){
-		window.location.href = $('a#download').getAttribute('href')
-  }
-}).on('load', ()=>$("div#spinner").css({display:'none'}))
-
 loadInterface();
 load_data();
+$("div#spinner").css({display:'none'})
