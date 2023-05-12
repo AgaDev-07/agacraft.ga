@@ -102,7 +102,6 @@ window.addEventListener('load', async () => {
       );
       content.images ||= [];
       $('title').innerHTML = `${content.name}(${type}) | AdrianCraft`;
-      console.log({content, version:search.version});
       $('h4.titulo').innerHTML = `${content.name} v${getVersion(content, search.version)}`;
       $(
         'div.texto-box'

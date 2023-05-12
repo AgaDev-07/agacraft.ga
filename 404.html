@@ -18,9 +18,7 @@
         <input type="text" id="search" />
         <button id="search">Buscar</button>
       </nav>
-      <nav>
-        <a v-for="l in nav" :href="l[0]">{{l[1]}}</a>
-      </nav>
+      <nav id="menu"></nav>
       <section class="textos-header">
         <h1>Error 404</h1>
         <h2>Pagina no encontrada</h2>
@@ -43,15 +41,11 @@
       </section>
     </main>
     <footer>
-      <div class="contenedor-footer">
-        <div class="content-foo" v-for="link in footer">
-          <h4>{{link[0]}}</h4>
-          <a class="link-s" target="_blank" :href="link[1]">{{link[2]}}</a>
-        </div>
-      </div>
+      <div class="contenedor-footer"></div>
     </footer>
   </body>
-  <script src="/js/api/data.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="/js/api/show.js"></script>
+	<script
+		src="/js/index.js"
+		type="module"
+	></script>
 </html>

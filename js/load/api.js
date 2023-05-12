@@ -1,19 +1,21 @@
-function request(url) {
-  return new Promise((resolve, reject) => {
-    fetch(url)
-      .then(r => resolve(r))
-      .catch(e => reject(e));
-  });
-}
+import api from '/json/api.json' assert {type: 'json'};
 
-const apiDomain = 'agaapi.webredirect.org:3000';
-async function loadApi(query) {
+/**
+ * @param {({
+ *  type: 'JunSP13' | 'textura' | 'addon';
+ *  content: string;
+ *  version: string;
+ * } | {
+ *  type?:'JunSP13' | 'textura' | 'addon';
+ * }) & {
+ *  index?: number;
+ *  search?: string;
+ *  format?: 'aga' | 'show';
+ * }} query
+ */
+export default function loadApi(query) {
   let { type, content, search, version, index, format } = query;
-  const data = await request(
-    'https://agacraft.ga/json/api.json'
-  );
-  let text = (await data.text()).trim();
-  let json = JSON.parse(text);
+  let json = api
   json = json.filter(addon => addon.publish !== false);
   if (index) json = json.filter((_, i) => i == index);
   else if (type) {
@@ -54,4 +56,4 @@ async function loadApi(query) {
   else if (format === 'show')
     json = json.forEach(({ name, icon, url }) => ({ name, icon, url }));
   return json;
-}
+};
