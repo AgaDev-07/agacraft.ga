@@ -6,11 +6,10 @@ function request(url) {
   });
 }
 
-const apiDomain = 'agaapi.webredirect.org:3000';
 async function loadApi(query) {
   let { type, content, search, version, index, format } = query;
   const data = await request(
-    'https://agacraft.ga/json/api.json'
+    'https://agaapi.onrender.com/api.agacraft'
   );
   let text = (await data.text()).trim();
   let json = JSON.parse(text);
@@ -39,7 +38,7 @@ async function loadApi(query) {
   }
   json.forEach(addon => {
     addon.description ||= 'Un Addon de AdrianCraft';
-    addon.icon ||= 'https://agacraft.ga/src/img/proximamente.png';
+    addon.icon ||= '/src/img/proximamente.png';
     if (addon.versions && addon.versions[addon['last-version']])
       addon.url = addon.versions[addon['last-version']];
   });

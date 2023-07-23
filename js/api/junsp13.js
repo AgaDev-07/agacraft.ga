@@ -15,7 +15,7 @@ document.querySelector('head').innerHTML += `<style>
 }
 </style>`;
 
-const domain = 'https://agacraft.ga';
+const domain = 'https://agacraft.pages.dev';
 
 function loadScript(url){
   return new Promise((resolve, reject) => {
