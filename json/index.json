@@ -1,4 +1,6 @@
 {
   "api": "./api.json",
+  "index": "./index.json",
+  "i": "./interface.json",
   "interface": "./interface.json"
 }
