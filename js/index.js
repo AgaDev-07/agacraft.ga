@@ -29,7 +29,7 @@ function load_data(){
     apiQuery.search = search.search;
   }
   if(search.version){
-    search.version = search.version;
+    apiQuery.version = search.version;
   }
   const type = apiQuery.type || 'addons';
 
