@@ -18,7 +18,7 @@ export default function loadApi(query) {
   let json = api
   json = json.filter(addon => addon.publish !== false);
   if (index) json = json.filter((_, i) => i == index);
-  else if (type) {
+  if (type) {
     json = json.filter(addon => addon.type.includes(type));
     if (content) {
       json = json.filter(
@@ -34,14 +34,14 @@ export default function loadApi(query) {
         });
       }
     }
-  } else if (search) {
+  }if (search) {
     json = json.filter(addon =>
       addon.name.toLowerCase().includes(search.toLowerCase())
     );
   }
   json.forEach(addon => {
     addon.description ||= 'Un Addon de AdrianCraft';
-    addon.icon ||= 'https://agacraft.ga/src/img/proximamente.png';
+    addon.icon ||= '/src/img/proximamente.png';
     if (addon.versions && addon.versions[addon['last-version']])
       addon.url = addon.versions[addon['last-version']];
   });

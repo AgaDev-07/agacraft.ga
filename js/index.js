@@ -109,4 +109,9 @@ function load_data(){
 
 loadInterface();
 load_data();
+$('button#search').click(() => {
+  const search = document.querySelector('input#search').value;
+  const query = '?search=' + search.replaceAll(' ', '-');
+  location.href = location.origin + location.pathname + query;
+});
 $("div#spinner").css({display:'none'})
