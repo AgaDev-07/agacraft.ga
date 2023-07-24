@@ -52,7 +52,7 @@ function load_data(){
       .join('-')}`;
     window.onlogin && window.onlogin()
     let content = json.map(addon => {
-      addon.URL = addon.url;
+      addon.URL = addon.versions[getVersion(addon, search.version)] || addon.url;
       return addon;
     })[0];
     if (content) {
