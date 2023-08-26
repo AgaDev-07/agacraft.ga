@@ -3,8 +3,8 @@ import loadApi from './load/api.js'
 import getSearch from './lib/search.js'
 import {urlToString} from './lib/url.js'
 
-import { $ } from 'https://adriancraft07.github.io/js-lib/$.js'
-import { createElementDom } from 'https://adriancraft07.github.io/js-lib/dom.js'
+import { $ } from './$.js'
+import { createElementDom } from './dom.js'
 
 const aTag = /#([^*]+)\*([^#]+)#/g;
 function getVersion(addon, version){
