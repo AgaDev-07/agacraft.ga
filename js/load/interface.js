@@ -1,7 +1,7 @@
 import interface_ from '/json/interface.json' assert { type: 'json' };
 
-import { $ } from './$.js';
-import { createElementDom } from './dom.js';
+import { $ } from '../$.js';
+import { createElementDom } from '../dom.js';
 
 export default function loadInterface() {
 	const nav = $('nav#menu');
