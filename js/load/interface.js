@@ -1,4 +1,4 @@
-import interface_ from '/json/interface.json' assert { type: 'json' };
+import interface_ from '/json/interface.json' with { type: 'json' };
 
 import { $ } from '../$.js';
 import { createElementDom } from '../dom.js';
