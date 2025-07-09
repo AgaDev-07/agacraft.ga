@@ -1,4 +1,4 @@
-import api from '/json/api.json' assert {type: 'json'};
+import api from '/json/api.json' with {type: 'json'};
 
 /**
  * @param {({
